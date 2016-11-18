@@ -45,7 +45,7 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                '<action:(index|contact|employees|callback)>'=>'main/<action>',
+                '<action:(index|contact|employees|callback|gii)>'=>'main/<action>',
             ],
         ],
 

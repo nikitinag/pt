@@ -2,13 +2,20 @@
 
 namespace app\controllers;
 
-class MainController extends \yii\web\Controller
+use app\models\Info;
+
+class MainController extends AppController
 {
     
     public function actionIndex()
     {
         $this->view->title='ТООИН | Главная';
-        return $this->render('index');
+        $info=Info::find()->asArray()->all();
+        
+        $above=$info[0][text_above];
+        $text=$info[0][text];
+        //debug($text);
+        return $this->render('index',compact('text'));
     }
 
 }

@@ -23,52 +23,17 @@ AppAsset::register($this);
 </head>
 <body>
 <?php $this->beginBody() ?>
-    <header class="navbar-fixed-top">
-    
-    <section class="line">
-    <p>лента холоднокатаная по размерам заказчика любой группы вытяжки</p>
-    </section>
-    
-    <nav class="navbar navbar-inverse">
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a title="На главную" class="navbar-brand" href="/index"><?= Html::img("@web/images/logo.png",['alt'=>'Логотип'])?></a>
-    </div>
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li><?= Html::a('Контакты','/contact') ?></li>
-        <li><?= Html::a('Вакансии','/employees') ?></li>
-        <li><?= Html::a('Обратная связь','/callback') ?></li>
-        <li class="dropdown">
-          <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ассортимент<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><?= Html::a('Качественные стали','/categogy/0') ?></li>
-            <li><?= Html::a('Трубы','/categogy/1') ?></li>
-            <li><?= Html::a('Сортовой прокат','/categogy/2') ?></li>
-            <li><?= Html::a('Листовой прокат','/categogy/3') ?></li>
-            <li><?= Html::a('Цветной прокат','/categogy/4') ?></li>
-            <li><?= Html::a('Нержавейка','/categogy/5') ?></li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container -->
-</nav>
+<header class="navbar-fixed-top">
+
+    <!--Menu-->
+    <?=app\components\MenuWidget::widget(); ?>
 
     <!--Calculator-->
-<section class="section-calculator">
-<div id="link-calculator" class="link-calculator">
-<p>Металлокалькулятор</p>
-</div>
-</section>
+    <section class="section-calculator">
+        <div id="link-calculator" class="link-calculator">
+            <p>Металлокалькулятор</p>
+        </div>
+    </section>
 
 </header>
 
