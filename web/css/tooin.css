@@ -1,0 +1,240 @@
+body{
+    font-family: arial;
+    font-size: 14px;
+    min-width:320px;
+    background-color: #fff;
+    background: url(/web/images/fon.jpg);
+}
+p{
+    margin: 0;
+}
+h4{
+    text-align: center;
+}
+.line{
+    background: url(/web/images/fon.jpg);
+}
+.line > p{
+    color:#000033;
+    text-align: center;
+    margin:0;
+    padding: 3px 0; 
+}
+.navbar-inverse{
+    background-color: #000033;
+    border-radius: 0;
+    margin: 0;
+}
+.navbar-brand > img{
+    max-height: 30px;
+}
+.navbar-brand{
+    padding-top: 10px;
+}
+.navbar-inverse .navbar-toggle {
+    background-color: #000033;
+    border: 2px solid #fff;
+}
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover{
+    background-color: #cccccc; 
+}
+.navbar-inverse .navbar-nav > li > a{
+    font-weight: bold;
+}
+.navbar-inverse .navbar-nav > li > a:hover {
+    background-color: #fff;
+    color: #000033;
+}
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:focus, .navbar-inverse .navbar-nav > .open > a:hover {
+    background-color: #fff;
+    color: #000033;
+}
+.section-calculator{
+    padding-top: 3px;
+}
+.link-calculator{
+    display: none;
+    background-color: #000033;
+    padding: 10px 0;
+    color:#fff;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 700;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.main {
+    margin-top: 90px; 
+}
+/*calculator*/
+
+.calculator{
+    color: #000033;
+    font-size: 11px;
+}
+.list{
+    padding: 0 15px;
+}
+.list > li{
+    list-style: outside none none;
+    text-align: center;
+    border-bottom: 1px solid #000033;
+    cursor: pointer;
+    padding-top: 10px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.list > li:hover{
+    font-weight: bold;
+}
+.activeelement{
+    color: #3366ff;
+    font-weight: bold;
+}
+.calculator-form{
+    margin: 20px 13px;    
+}
+.form-control, .input-group-addon, .btn{
+    font-size: 11px;
+    border-radius: 0;
+    border: 1px solid #000033;
+}
+.form-control:focus{
+    border-color: #3366ff;
+}
+.input-group{
+    margin: 5px 0;
+}
+.input-group-addon{
+    color: #000033;
+}
+.calculator-form > button{
+    margin-top: 10px;
+    border-color: #000033!important;
+    color: #000033!important;
+}
+.calculator-form > button:hover{
+    background-color: #6699ff!important;
+}
+.calculator-result{
+    text-align: center;
+    padding-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.calculator-good{
+    color: #3366ff;
+}
+.calculator-bad{
+    color: red;
+}
+.calculator-form-IE p{
+    text-align: center;  
+}
+
+/*---------main----------*/
+
+.main-content{
+    padding-top: 10px;
+}
+.main-content p{
+   padding-bottom: 10px; 
+}
+.main-content h4{
+   margin: 10px 0; 
+}
+.main-content img{
+   margin-bottom: 15px; 
+}
+
+
+
+/*---footer---*/
+
+footer{
+    margin-top: 15px;
+    background-color: #000033;
+    font-size: 11px;
+    color: #cccccc;
+}
+footer p{
+    margin: 15px 0;
+    font-weight: bold;
+}
+.contacts, .copy{
+    padding-left: 130px;
+    padding-bottom: 15px;
+}
+.contacts > dl{
+    margin: 5px 0;
+}
+.develop{
+    margin-top: 15px;
+    margin-bottom: 40px;
+}
+
+/*-----@media------*/
+
+@media only screen and (min-width:1200px){
+    
+    body{
+        font-size: 16px;
+    }
+    .calculator-sm, .form-control, footer{
+        font-size: 14px;
+    }
+}
+
+
+@media only screen and (max-width:768px){
+    .line{
+        background-image: none;
+        background-color: #cccccc;
+    }
+    body{
+        background-image: none;
+    }
+    .link-calculator{
+        display: block;
+    }
+    .section-calculator{
+        border-bottom: 2px solid #fff;
+    }
+    .main {
+    margin-top: 125px; 
+    }
+    .main > div{
+        margin: 0;
+    }
+    .section-calculator{
+    background-color: #fff;
+    }
+    .copy{
+    border-top: 1px solid #cccccc;
+}
+}
+
+@media only screen and (max-width:500px){
+    .line{
+        font-size:10px;
+    }
+}
+
+@media only screen and (max-width:350px){
+    .line{
+        font-size:9px;
+    }
+}
+
+
+
+
