@@ -2,7 +2,6 @@
 use app\assets\AppAsset;
 use yii\helpers\Html;
 use yii\helpers\Url;
-use app\assets\ltAppAsset;
     
 AppAsset::register($this);
 ?>
