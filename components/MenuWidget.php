@@ -9,11 +9,7 @@ use app\models\Info;
 class MenuWidget extends Widget{
     
     protected $text;
-    
-    public function init(){
-        parent::init();
-    }
-    
+      
     public function run(){
         $above=Info::find('text_above')->asArray()->one();
         $this->text.='<section class="line"><p>'.$above['text_above'].'</p></section>';

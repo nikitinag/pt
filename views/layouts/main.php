@@ -41,24 +41,13 @@ AppAsset::register($this);
 <div class="container">
     <div class="row">
         <div class="col-sm-4 block">
-            <section id="calculator" class="calculator-sm hidden-xs">
-                <h4>Металлокалькулятор</h4>
-                <ul id="list" class="list">
-                    <li value="1">Круглые прутки, круги и проволка</li>
-                    <li value="2">Шестигранные прутки</li>
-                    <li value="3">Листы, плиты, ленты</li>
-                    <li value="4">Трубы и втулки</li>
-                    <li value="5">Прямоугольные трубы</li>
-                </ul>
-                <div id="calculator-form" class="calculator-form"></div>
-                <p id="calculator-result" class="calculator-result"></p>
-                <p class="calculator-info">* Расчёт производится для Сталь 3.</p>
-            </section><!--.calculator-sm-->
+            <?=app\components\CalculatorWidget::widget(); ?>
         </div>
 
 <?= $content ?>
 
 <footer>
+    <?=app\components\FooterWidget::widget(); ?>
 <div class="container">
 <div class="row">
     <div class="col-sm-6 contacts">
