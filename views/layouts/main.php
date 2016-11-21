@@ -43,10 +43,12 @@ AppAsset::register($this);
         <div class="col-sm-4 block">
             <?=app\components\CalculatorWidget::widget(); ?>
         </div>
+        
+        <div class="col-sm-8 block">
+            <?= $content ?>
+        </div>
 
-<?= $content ?>
-
-</div><!--/.row-->
+    </div><!--/.row-->
 </div><!--/.container-->
 </div><!--/.main-->
 

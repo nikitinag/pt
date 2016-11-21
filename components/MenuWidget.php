@@ -5,12 +5,17 @@ use yii\base\Widget;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use app\models\Info;
+use Yii;
 
 class MenuWidget extends Widget{
     
     protected $text;
       
     public function run(){
+        
+        $cache=Yii::$app->cache->get('menu');
+        if($cache) return $cache;
+        
         $above=Info::find('text_above')->asArray()->one();
         $this->text.='<section class="line"><p>'.$above['text_above'].'</p></section>';
         $this->text.='<nav class="navbar navbar-inverse">
@@ -46,6 +51,8 @@ class MenuWidget extends Widget{
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container -->
 </nav>';
+        
+        Yii::$app->cache->set('menu',$this->text,60);
         return $this->text;
     }
 }

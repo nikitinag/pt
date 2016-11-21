@@ -4,6 +4,7 @@ namespace app\components;
 use yii\base\Widget;
 use yii\helpers\Html;
 use app\models\Contact;
+use Yii;
 
 class FooterWidget extends Widget{
    
@@ -12,6 +13,9 @@ class FooterWidget extends Widget{
     protected $footerRight;
     
     public function run(){
+        
+        $cache=Yii::$app->cache->get('footer');
+        if($cache) return $cache;
         
         // footerLeft
         $pFooterLeft=Html::tag('p','Контактная информация:');
@@ -47,6 +51,7 @@ class FooterWidget extends Widget{
         $row=Html::tag('div',$this->footerLeft.$this->footerRight,['class' => 'row']);
         $this->footer=Html::tag('div',$row,['class' => 'container']);
         
+        Yii::$app->cache->set('footer',$this->footer,60);
         return $this->footer;
     }
 
