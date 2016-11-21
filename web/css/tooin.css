@@ -162,6 +162,7 @@ h4{
 
 footer{
     margin-top: 15px;
+    padding-bottom: 50px;
     background-color: #000033;
     font-size: 11px;
     color: #cccccc;
@@ -172,7 +173,6 @@ footer p{
 }
 .contacts, .copy{
     padding-left: 130px;
-    padding-bottom: 15px;
 }
 .contacts > dl{
     margin: 5px 0;

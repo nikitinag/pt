@@ -12,14 +12,14 @@ AppAsset::register($this);
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
-    <title><?=Html::encode($this->title)?></title>
+    <title><?=Html::encode($this->title)?></title>     
+    <?php $this->head() ?>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->      
-    <?php $this->head() ?>
+    <![endif]-->
 </head>
 <body>
 <?php $this->beginBody() ?>
@@ -46,40 +46,12 @@ AppAsset::register($this);
 
 <?= $content ?>
 
-<footer>
-    <?=app\components\FooterWidget::widget(); ?>
-<div class="container">
-<div class="row">
-    <div class="col-sm-6 contacts">
-        <p>Контактная информация:</p>
-        <dl>
-            <dt>телефон-факс:</dt>
-                <dd>+375 17 2685243</dd>
-                <dd>+375 17 2685244</dd>
-        </dl>
-        <dl>
-            <dt>мобильный телефон:</dt>
-                <dd>+375 29 1685244</dd>
-        </dl>
-        <dl>
-            <dt>электронная почта:</dt>
-                <dd>michael.kov@mail.ru</dd>
-        </dl>
-        <dl>
-            <dt>адрес:</dt>
-                <dd>220113 г.Минск, ул.Мележа д. 1 офис 1109</dd>
-        </dl>
-    </div>
-    <div class="col-sm-6 copy">
-        <dl class="develop">
-        <dt>Разработка:</dt>
-                <dd>Никитин Алексей</dd>
-                <dd></dd>
-        </dl>
-        <p>Copyright&copy;2016&nbsp;Унитарное предприятие&nbsp;“ТООИН”.&nbsp;</p>
-    </div>
 </div><!--/.row-->
 </div><!--/.container-->
+</div><!--/.main-->
+
+<footer>
+    <?=app\components\FooterWidget::widget(); ?>
 </footer>
 
 <?php $this->endBody() ?>

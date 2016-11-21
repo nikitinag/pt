@@ -7,8 +7,5 @@ use yii\helpers\Html;
                 <?=$text?>
             </div>
         </div>
-    </div><!--/.row-->
-</div><!--/.container-->
-</div><!--/.main-->
 
 
