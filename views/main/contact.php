@@ -1,10 +1,5 @@
-<?php
-
-
-?>
-        
 <div id="main-content" class="main-content">
-    <h4>Контактная информация</h4>
+    <h3>Контактная информация</h3>
     <? foreach($text as $p=>$li): ?>
     <p><?=$p?></p>
     <ul><?=$li?></ul>

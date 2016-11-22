@@ -14,7 +14,7 @@ class CalculatorWidget extends Widget{
         $cache=Yii::$app->cache->get('calc');
         if($cache) return $cache;
         
-        $h4= Html::tag('h4', 'Металлокалькулятор');
+        $h4= Html::tag('h3', 'Металлокалькулятор');
         $listLi='<li value="1">Круглые прутки, круги и проволка</li>
                  <li value="2">Шестигранные прутки</li>
                  <li value="3">Листы, плиты, ленты</li>
