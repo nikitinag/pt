@@ -19,26 +19,14 @@ class FooterWidget extends Widget{
         
         // footerLeft
         $pFooterLeft=Html::tag('p','Контактная информация:');
+        
         $contacts=Contact::find()->asArray()->all();
-        $type=[
-                1=>'телефон-факс',
-                2=>'мобильный тел.',
-                3=>'эл.почта',
-                4=>'адрес',
-              ];
-        $arrayContact=array();
-        foreach($contacts as $contact){
-           switch($contact['type']){
-            case $type[1]: $arrayContact[ $type[1] ].=Html::tag('dd',$contact['contact']);break;
-            case $type[2]: $arrayContact[ $type[2] ].=Html::tag('dd',$contact['contact']);break;
-            case $type[3]: $arrayContact[ $type[3] ].=Html::tag('dd',$contact['contact']);break;
-            case $type[4]: $arrayContact[ $type[4] ].=Html::tag('dd',$contact['contact']);break;
-           } 
-        }
-        $dlFooterLeft="";
+        $arrayContact=arrayContacts($contacts,'dd');
+        $dlFooterLeft='';
         foreach($arrayContact as $t=>$con){
-            $dlFooterLeft.=Html::tag('dl',Html::tag('dt',$t).$con);
+            $dlFooterLeft.=Html::tag('dl',Html::tag('dt',$t.':').$con);
         }
+                
         $this->footerLeft=Html::tag('div',$pFooterLeft.$dlFooterLeft,['class' => 'col-sm-6 contacts']);
         
         //footerRight

@@ -28,7 +28,7 @@ class MenuWidget extends Widget{
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a title="На главную" class="navbar-brand" href="/index">'.Html::img("@web/images/logo.png",['alt'=>'Логотип']).'</a>
+            <a title="На главную" class="navbar-brand" href="'.Url::to(['/']).'">'.Html::img("@web/images/logo.png",['alt'=>'Логотип']).'</a>
             </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">

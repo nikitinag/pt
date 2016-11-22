@@ -10,6 +10,7 @@ $config = [
     'bootstrap' => ['log'],
     'components' => [
         'request' => [
+            'baseUrl' => '',
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
             'cookieValidationKey' => 'lCDZX6f_Pxq4zt8_ZQsebwcaYpwAtiyF',
         ],
@@ -45,7 +46,8 @@ $config = [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                '<action:(index|contact|employees|callback|gii)>'=>'main/<action>',
+                '/' => 'main/index',
+                '<action:(contact|employees|callback)>' => 'main/<action>',
             ],
         ],
 

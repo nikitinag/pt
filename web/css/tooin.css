@@ -10,6 +10,7 @@ p{
 }
 h4{
     text-align: center;
+    font-weight: bold;
 }
 .line{
     background: url(/web/images/fon.jpg);
@@ -76,6 +77,9 @@ h4{
 .calculator{
     color: #000033;
     font-size: 11px;
+}
+#calculator{
+    padding-top: 10px;
 }
 .list{
     padding: 0 15px;
@@ -208,6 +212,9 @@ footer p{
     }
     .section-calculator{
         border-bottom: 2px solid #fff;
+    }
+    .calculator-info{
+        border-bottom: 1px solid #000033;
     }
     .main {
     margin-top: 125px; 
