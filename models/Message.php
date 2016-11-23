@@ -30,9 +30,9 @@ class Message extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'email', 'phone', 'text', 'date'], 'required'],
+            [['name', 'email', 'text', 'date'], 'required'],
             [['text'], 'string'],
-            [['date'], 'safe'],
+            [['date', 'phone'], 'safe'],
             [['name', 'email', 'phone'], 'string', 'max' => 255],
         ];
     }

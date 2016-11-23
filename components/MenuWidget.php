@@ -35,7 +35,7 @@ class MenuWidget extends Widget{
       <ul class="nav navbar-nav navbar-right">
         <li>'.Html::a("Контакты","/contact").'</li>
         <li>'.Html::a("Вакансии","/employees").'</li>
-        <li>'.Html::a("Обратная связь","/callback").'</li>
+        <li>'.Html::a("Обратная связь","/feedback").'</li>
         <li class="dropdown">
           <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ассортимент<span class="caret"></span></a>
           <ul class="dropdown-menu">

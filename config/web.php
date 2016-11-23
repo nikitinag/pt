@@ -47,7 +47,7 @@ $config = [
             'showScriptName' => false,
             'rules' => [
                 '/' => 'main/index',
-                '<action:(contact|employees|callback)>' => 'main/<action>',
+                '<action:(contact|employees|feedback)>' => 'main/<action>',
             ],
         ],
 

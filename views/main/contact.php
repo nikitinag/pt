@@ -1,3 +1,5 @@
+<? $this->registerJsFile('https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js'); ?>
+
 <div id="main-content" class="main-content">
     <h3>Контактная информация</h3>
     <? foreach($text as $p=>$li): ?>
