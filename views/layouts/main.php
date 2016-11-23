@@ -45,7 +45,9 @@ AppAsset::register($this);
         </div>
         
         <div class="col-sm-8 block">
-            <?= $content ?>
+            <main>
+                <?= $content ?>
+            </main>
         </div>
 
     </div><!--/.row-->
