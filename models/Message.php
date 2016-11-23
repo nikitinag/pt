@@ -10,7 +10,6 @@ use Yii;
  * @property integer $id
  * @property string $name
  * @property string $email
- * @property string $phone
  * @property string $text
  * @property string $date
  */
@@ -31,9 +30,9 @@ class Message extends \yii\db\ActiveRecord
     {
         return [
             [['name', 'email', 'text', 'date'], 'required'],
-            [['text'], 'string'],
-            [['date', 'phone'], 'safe'],
-            [['name', 'email', 'phone'], 'string', 'max' => 255],
+            ['text', 'string'],
+            ['date', 'safe'],
+            [['name', 'email'], 'string', 'max' => 255],
         ];
     }
 
@@ -46,7 +45,6 @@ class Message extends \yii\db\ActiveRecord
             'id' => 'ID',
             'name' => 'Name',
             'email' => 'Email',
-            'phone' => 'Phone',
             'text' => 'Text',
             'date' => 'Date',
         ];

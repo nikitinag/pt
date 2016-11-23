@@ -2,10 +2,12 @@
 namespace app\controllers;
 
 use Yii;
+use yii\helpers\Html;
 use app\models\Info;
 use app\models\Contact;
 use app\models\Employees;
 use app\models\FeedbackForm;
+use app\models\Message;
 
 class MainController extends AppController
 {
@@ -53,25 +55,31 @@ class MainController extends AppController
        $feedback=new FeedbackForm();
        if ($feedback->load(Yii::$app->request->post())){
             if($feedback->validate()){
+                $name=Html::encode($feedback->name);
+                $textmessage=Html::encode($feedback->text);
                 $trowadmin=Yii::$app->mailer->compose()
-                    ->setFrom([$feedback->email => $feedback->name])
+                    ->setFrom([$feedback->email => $name])
                     ->setTo('tooin@tooin.by')
                     ->setSubject('Theme message')
-                    ->setTextBody($feedback->text.'. phone '.$feedback->phone)
+                    ->setTextBody($textmessage)
                     ->send();
                 $trowuser=Yii::$app->mailer->compose()
                     ->setFrom(['tooin@tooin.by' => 'TOOIN'])
                     ->setTo($feedback->email)
                     ->setSubject('Theme message')
-                    ->setTextBody($feedback->text)
+                    ->setTextBody($textmessage)
                     ->send();
                     
-                $trowdb=1;
-                
+                $message=new Message();
+                $message->name=$name;
+                $message->email=$feedback->email;
+                $message->text=$textmessage;
+                $message->date=date("Y-m-d H:i:s");
+                $trowdb=$message->save(false);
                 
                 if($trowadmin&&$trowuser&&$trowdb){
                     Yii::$app->session->setFlash('success','Сообщение отправлено');
-                    //return $this->refresh();
+                    return $this->refresh();
                 }else{
                     Yii::$app->session->setFlash('error','Произошла ошибка обработки данных');
                 }
