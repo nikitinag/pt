@@ -14,17 +14,14 @@ class MainController extends AppController
     
     public function actionIndex()
     {
-        $this->view->title='ТООИН | Главная';
         $info=Info::find()->asArray()->all();
-        
-        $above=$info[0][text_above];
         $text=$info[0][text];
         return $this->render('index',compact('text'));
     }
     
     public function actionContact()
     {
-       $this->view->title='ТООИН | Контакты';
+       $this->view->title.=' | Контакты';
        $contacts=Contact::find()->asArray()->all();
        $text=arrayContacts($contacts);
        return $this->render('contact',compact('text')); 
@@ -32,7 +29,7 @@ class MainController extends AppController
     
     public function actionEmployees()
     {
-       $this->view->title='ТООИН | Вакансии';
+       $this->view->title.=' | Вакансии';
        $head='На данный момент предприятию не требуются сотрудники.';
        $list=null;
        if(Yii::$app->request->get()){
@@ -51,31 +48,35 @@ class MainController extends AppController
     
     public function actionFeedback()
     {
-       $this->view->title='ТООИН | Обратная связь';
+       $this->view->title.=' | Обратная связь';
        $feedback=new FeedbackForm();
        if ($feedback->load(Yii::$app->request->post())){
             if($feedback->validate()){
+                
                 $name=Html::encode($feedback->name);
                 $textmessage=Html::encode($feedback->text);
-                $trowadmin=Yii::$app->mailer->compose()
-                    ->setFrom([$feedback->email => $name])
-                    ->setTo('tooin@tooin.by')
-                    ->setSubject('Theme message')
-                    ->setTextBody($textmessage)
-                    ->send();
-                $trowuser=Yii::$app->mailer->compose()
-                    ->setFrom(['tooin@tooin.by' => 'TOOIN'])
-                    ->setTo($feedback->email)
-                    ->setSubject('Theme message')
-                    ->setTextBody($textmessage)
-                    ->send();
-                    
+                $email=Yii::$app->params['adminEmail'];
+                //в БД   
                 $message=new Message();
                 $message->name=$name;
                 $message->email=$feedback->email;
                 $message->text=$textmessage;
                 $message->date=date("Y-m-d H:i:s");
                 $trowdb=$message->save(false);
+                //на почту администратору
+                $trowadmin=Yii::$app->mailer->compose()
+                    ->setFrom([$feedback->email => $name])
+                    ->setTo($email)
+                    ->setSubject('Theme message')
+                    ->setTextBody($textmessage)
+                    ->send();
+                //на почту клиенту  
+                $trowuser=Yii::$app->mailer->compose()
+                    ->setFrom([$email => 'TOOIN'])
+                    ->setTo($feedback->email)
+                    ->setSubject('Вы отправили сообщение в компанию ТООИН с текстом')
+                    ->setHtmlBody($textmessage)
+                    ->send();
                 
                 if($trowadmin&&$trowuser&&$trowdb){
                     Yii::$app->session->setFlash('success','Сообщение отправлено');
@@ -83,11 +84,10 @@ class MainController extends AppController
                 }else{
                     Yii::$app->session->setFlash('error','Произошла ошибка обработки данных');
                 }
-            
+                
             }else{
                 Yii::$app->session->setFlash('error','Неверно введены данные');
-            }
-            
+            }  
        }
        return $this->render('feedback',compact('feedback')); 
     }

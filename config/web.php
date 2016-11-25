@@ -8,6 +8,12 @@ $config = [
     'language' => 'ru',
     'defaultRoute' => 'main/index',
     'bootstrap' => ['log'],
+    'modules' => [
+        'kovpak' => [
+            'class' => 'app\modules\kovpak\Module',
+            'layout' => 'admin',
+        ],
+    ],
     'components' => [
         'request' => [
             'baseUrl' => '',
@@ -20,6 +26,7 @@ $config = [
         'user' => [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
+            'loginUrl' => 'into',
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
@@ -47,6 +54,7 @@ $config = [
             'showScriptName' => false,
             'rules' => [
                 '/' => 'main/index',
+                '<action:logout>' => 'into/<action>',
                 '<action:(contact|employees|feedback)>' => 'main/<action>',
             ],
         ],

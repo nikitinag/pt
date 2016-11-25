@@ -2,11 +2,10 @@
 
 namespace app\controllers;
 
-use app\models\System;
-use yii\helpers\Url;
-use Yii;
-
 class AppController extends \yii\web\Controller
 {
-   
+   public function beforeAction(){
+    $this->view->title='ТООИН';
+    return true;
+   }
 }
