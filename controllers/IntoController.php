@@ -8,16 +8,13 @@ use Yii;
 
 class IntoController extends \yii\web\Controller
 {
+    public $layout='into';
+    
     public function beforeAction()
     {
-        $this->view->title='ТООИН | Вход в админка';
+        $this->view->title='ТООИН | Вход в админку';
         return true;
     }
-    
-    /*public function actionIndex()
-    {
-        return $this->render('index');
-    }*/
     
     public function actionIndex()
     {
@@ -29,6 +26,7 @@ class IntoController extends \yii\web\Controller
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             return $this->goBack();
         }
+        
         return $this->render('index', [
             'model' => $model,
         ]);
