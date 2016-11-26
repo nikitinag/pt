@@ -4,9 +4,6 @@ use yii\bootstrap\ActiveForm;
 use app\models\User;
 
 ?>
-<div class="site-login">
-    
-
     <h3>Вход в администпативную панель</h3>
 
     <?php $form = ActiveForm::begin(); ?>
@@ -20,5 +17,4 @@ use app\models\User;
         <?= Html::submitButton('Войти', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
         
     <?php ActiveForm::end(); ?>  
-    
-</div>
+

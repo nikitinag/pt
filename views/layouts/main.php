@@ -57,9 +57,6 @@ AppAsset::register($this);
 <footer>
     <?=app\components\FooterWidget::widget(); ?>
 </footer>
-<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
-        async defer></script>
-
 <?php $this->endBody() ?>
 </body>
 </html>

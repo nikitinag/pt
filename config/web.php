@@ -11,6 +11,7 @@ $config = [
     'modules' => [
         'kovpak' => [
             'class' => 'app\modules\kovpak\Module',
+            'defaultRoute' => 'kovpak/admin/index',
             'layout' => 'admin',
         ],
     ],
@@ -26,7 +27,7 @@ $config = [
         'user' => [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
-            'loginUrl' => 'into',
+            'loginUrl' => '/into',
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
@@ -55,6 +56,7 @@ $config = [
             'rules' => [
                 '/' => 'main/index',
                 '<action:logout>' => 'into/<action>',
+                '/kovpak' => 'kovpak/admin/index',
                 '<action:(contact|employees|feedback)>' => 'main/<action>',
             ],
         ],

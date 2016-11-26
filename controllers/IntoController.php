@@ -2,14 +2,15 @@
 
 namespace app\controllers;
 
+use yii\filters\AccessControl;
+use yii\filters\VerbFilter;
 use app\models\LoginForm;
-use yii\helpers\Url;
 use Yii;
 
 class IntoController extends \yii\web\Controller
 {
     public $layout='into';
-    
+        
     public function beforeAction()
     {
         $this->view->title='ТООИН | Вход в админку';
@@ -40,7 +41,6 @@ class IntoController extends \yii\web\Controller
     public function actionLogout()
     {
         Yii::$app->user->logout();
-
         return $this->goHome();
     }
 }
