@@ -1,5 +1,6 @@
 <?php
 use app\assets\AdminAsset;
+use yii\bootstrap\Nav;
 use yii\helpers\Html;
 use yii\helpers\Url;
     
@@ -23,15 +24,64 @@ AdminAsset::register($this);
 </head>
 <body>
 <?php $this->beginBody() ?>
-<header class="navbar-fixed-top">
-    
-</header>
 
-<div class="main">
 <div class="container">
+<div class="header">
+    <h1>Административная панель</h1>
+</div>
     <div class="row">
         <div class="col-sm-4 block">
-             
+            <?echo Nav::widget([
+            'id' => 'nav',
+            'class' => 'nav',
+            'items' => [
+                [
+                    'label' => 'Обновление ассортимента',
+                    'url' => ['/kovpak'],
+                    'linkOptions' => [],
+                ],
+                [
+                    'label' => 'Текст вверху страницы',
+                    'url' => ['/kovpak/admin/above'],
+                    'linkOptions' => [],
+                ],
+                [
+                    'label' => 'Текст главной странице',
+                    'url' => ['/kovpak/admin/text'],
+                    'linkOptions' => [],
+                ],
+                [
+                    'label' => 'Вакансии',
+                    'url' => ['/kovpak/admin/employees'],
+                    'linkOptions' => [],
+                ],
+                [
+                    'label' => 'Сообщения',
+                    'url' => ['/kovpak/admin/message'],
+                    'linkOptions' => [],
+                ],
+                [
+                    'label' => 'Контакты',
+                    'url' => ['/kovpak/admin/contact'],
+                    'linkOptions' => [],
+                ],
+                [
+                    'label' => 'Логин и пароль',
+                    'url' => ['/kovpak/admin/login'],
+                    'linkOptions' => [],
+                ],
+                [
+                    'label' => 'Перейти на сайт',
+                    'url' => ['/'],
+                    'linkOptions' => [],
+                ],
+                [
+                    'label' => 'Выход',
+                    'url' => ['/logout'],
+                    'linkOptions' => [],
+                ],
+            ],
+            ]);?> 
         </div>
         
         <div class="col-sm-8 block">
@@ -39,9 +89,8 @@ AdminAsset::register($this);
         </div>
 
     </div><!--/.row-->
-        <p><a href="<?=\yii\helpers\Url::to(['/logout'])?>">ВЫХОД</a></p>
 </div><!--/.container-->
-</div><!--/.main-->
+
 
 <footer>
     

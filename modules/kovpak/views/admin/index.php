@@ -3,4 +3,4 @@ use yii\helpers\Url;
 ?>
 
 <div class="kovpak-default-index">
-    <h2>Админка</h2>
+    <h2>Обновление ассортимента</h2>
