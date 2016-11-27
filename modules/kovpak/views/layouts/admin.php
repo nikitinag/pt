@@ -1,5 +1,6 @@
 <?php
 use app\assets\AdminAsset;
+use yii\bootstrap\Navbar;
 use yii\bootstrap\Nav;
 use yii\helpers\Html;
 use yii\helpers\Url;
@@ -26,11 +27,30 @@ AdminAsset::register($this);
 <?php $this->beginBody() ?>
 
 <div class="container">
-<div class="header">
+<div class="xsnavbar clearfix visible-xs-block">
+
+<? NavBar::begin(['brandLabel' => 'Административная панель','brandUrl' => '/kovpak']);
+echo Nav::widget([
+    'items' => [
+        ['label' => 'Обновление ассортимента', 'url' => ['/kovpak']],
+        ['label' => 'Текст вверху страницы', 'url' => ['/kovpak/admin/above']],
+        ['label' => 'Текст главной странице', 'url' => ['/kovpak/admin/text']],
+        ['label' => 'Вакансии', 'url' => ['/kovpak/admin/employees']],
+        ['label' => 'Сообщения', 'url' => ['/kovpak/admin/message']],
+        ['label' => 'Контакты', 'url' => ['/kovpak/admin/contact']],
+        ['label' => 'Логин и пароль', 'url' => ['/kovpak/admin/login']],
+        ['label' => 'Перейти на сайт', 'url' => ['/']],
+        ['label' => 'Выход', 'url' => ['/logout']],
+    ],
+    'options' => ['class' => 'navbar-nav'],
+]);
+NavBar::end(); ?>
+</div>
+<div class="header clearfix hidden-xs">
     <h1>Административная панель</h1>
 </div>
     <div class="row">
-        <div class="col-sm-4 block">
+        <div class="col-sm-4 block clearfix hidden-xs">
             <?echo Nav::widget([
             'id' => 'nav',
             'class' => 'nav',
@@ -81,7 +101,10 @@ AdminAsset::register($this);
                     'linkOptions' => [],
                 ],
             ],
-            ]);?> 
+            ]);
+
+            
+            ?> 
         </div>
         
         <div class="col-sm-8 block">

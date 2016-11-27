@@ -11,6 +11,8 @@ class AdminController extends AppAdminController
 {
        
     public function actionIndex(){
+        
+        
         return $this->render('index');
     }
     
