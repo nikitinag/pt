@@ -9,6 +9,7 @@ body{
 .header, .row{
     background-color: #fff;
     margin: 10px 0 10px 0;
+    padding-bottom: 20px;
 }
 .header{
    padding: 10px 0; 
@@ -16,7 +17,7 @@ body{
 .header h1{
     margin: 0!important;
     text-align: center;
-    font-size: 34px;
+    font-size: 32px;
     font-weight: bold;
     color: #000033;
 }

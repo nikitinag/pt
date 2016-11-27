@@ -29,7 +29,7 @@ AdminAsset::register($this);
 <div class="container">
 <div class="xsnavbar clearfix visible-xs-block">
 
-<? NavBar::begin(['brandLabel' => 'Административная панель','brandUrl' => '/kovpak']);
+<? NavBar::begin(['brandLabel' => 'АДМИНИСТРАТИВНАЯ ПАНЕЛЬ','brandUrl' => '/kovpak']);
 echo Nav::widget([
     'items' => [
         ['label' => 'Обновление ассортимента', 'url' => ['/kovpak']],
@@ -47,7 +47,7 @@ echo Nav::widget([
 NavBar::end(); ?>
 </div>
 <div class="header clearfix hidden-xs">
-    <h1>Административная панель</h1>
+    <h1>АДМИНИСТРАТИВНАЯ ПАНЕЛЬ</h1>
 </div>
     <div class="row">
         <div class="col-sm-4 block clearfix hidden-xs">

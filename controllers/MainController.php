@@ -83,11 +83,11 @@ class MainController extends AppController
                     return $this->refresh();
                 }else{
                     Yii::$app->session->setFlash('error','Произошла ошибка обработки данных');
-                }
+                    }
                 
             }else{
                 Yii::$app->session->setFlash('error','Неверно введены данные');
-            }  
+                }  
        }
        return $this->render('feedback',compact('feedback')); 
     }
