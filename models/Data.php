@@ -12,7 +12,7 @@ use Yii;
  * @property string $item1
  * @property string $item2
  * @property string $type
- * @property double $price
+ * @property string $price
  */
 class Data extends \yii\db\ActiveRecord
 {

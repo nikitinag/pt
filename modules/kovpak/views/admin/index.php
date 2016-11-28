@@ -4,7 +4,7 @@ use app\models\UpdateForm;
 use yii\bootstrap\ActiveForm;
 ?>
 
-<div class="kovpak-default-index">
+<div class="kovpak-index">
     <h2>Обновление ассортимента</h2>
     <? if(Yii::$app->session->hasFlash('success')): ?>
     <div class="alert alert-success" role="alert">

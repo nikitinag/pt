@@ -13,9 +13,7 @@ use Yii;
  * @property string $item1
  * @property string $item2
  * @property string $type
- * @property double $price
- * @property string $keywords
- * @property string $description
+ * @property string $price
  */
 class Category extends \yii\db\ActiveRecord
 {
@@ -35,8 +33,7 @@ class Category extends \yii\db\ActiveRecord
         return [
             [['list_id', 'name', 'item1', 'item2', 'type', 'price'], 'required'],
             [['list_id'], 'integer'],
-            [['price'], 'number'],
-            [['name', 'item1', 'item2', 'type', 'keywords', 'description'], 'string', 'max' => 255],
+            [['name', 'item1', 'item2', 'type', 'price'], 'string', 'max' => 255],
         ];
     }
 
@@ -53,8 +50,6 @@ class Category extends \yii\db\ActiveRecord
             'item2' => 'Item2',
             'type' => 'Type',
             'price' => 'Price',
-            'keywords' => 'Keywords',
-            'description' => 'Description',
         ];
     }
 }
