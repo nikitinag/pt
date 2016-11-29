@@ -30,11 +30,9 @@ use app\models\Data;
     }
     
     //Парсинг HTML
-    function parseHTML($coefficient){
-        
+    function parseHTML($coefficient,$remoteUrl,$list_id){
         require_once('phpQuery-onefile.php');
-        $list_id=1;
-        $document = phpQuery::newDocumentFile('01.html');
+        $document = phpQuery::newDocumentFile($remoteUrl);
         $bodys=$document->find('tbody');
         foreach($bodys as $body){
             $category=new Category;
@@ -53,10 +51,11 @@ use app\models\Data;
                             $j++;
                             $th=pq($th)->text();
                             switch($j){
-                                case 2: $category->item1=!empty($th)?$th:'-';break;
-                                case 3: $category->item2=!empty($th)?$th:'-';break;
-                                case 4: $category->type=!empty($th)?$th:'-';break;
-                                case 5: $category->price=!empty($th)?$th:'-';break;
+                                case 2: $category->item1=!empty($th)?$th:"-";break;
+                                case 3: $category->item2=!empty($th)?$th:"-";break;
+                                case 4: $category->type=!empty($th)?$th:"-";break;
+                                case 5: $category->price=!empty($th)?$th:"-";break;
+                                default: return false;
                             }
                         }
                     }
@@ -69,10 +68,11 @@ use app\models\Data;
                             $j++;
                             $td=pq($td)->text();
                             switch($j){
-                                case 1: $data->item1=$td;break;
-                                case 2: $data->item2=$td;break;
-                                case 3: $data->type=$td;break;
-                                case 4: $data->price=$td*$coefficient;break;
+                                case 1: $data->item1=!empty($td)?$td:"-";break;
+                                case 2: $data->item2=!empty($td)?$td:"-";break;
+                                case 3: $data->type=!empty($td)?$td:"-";break;
+                                case 4: $data->price=!empty($td)?$td:0;$data->price*=$coefficient;break;
+                                default: return false;
                             }   
                         }
                     $data->save();
@@ -80,5 +80,6 @@ use app\models\Data;
                 }
         }
         unset($document);
+        return true;
     }
 ?>
