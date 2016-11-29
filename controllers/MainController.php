@@ -3,32 +3,32 @@ namespace app\controllers;
 
 use Yii;
 use yii\helpers\Html;
+use app\models\System;
 use app\models\Info;
 use app\models\Contact;
 use app\models\Employees;
 use app\models\FeedbackForm;
 use app\models\Message;
+use app\models\ListUrl;
+use app\models\Category;
 
 class MainController extends AppController
 {
     
-    public function actionIndex()
-    {
+    public function actionIndex(){
         $info=Info::find()->asArray()->all();
         $text=$info[0][text];
         return $this->render('index',compact('text'));
     }
     
-    public function actionContact()
-    {
+    public function actionContact(){
        $this->view->title.=' | Контакты';
        $contacts=Contact::find()->asArray()->all();
        $text=arrayContacts($contacts);
        return $this->render('contact',compact('text')); 
     }
     
-    public function actionEmployees()
-    {
+    public function actionEmployees(){
        $this->view->title.=' | Вакансии';
        $head='На данный момент предприятию не требуются сотрудники.';
        $list=null;
@@ -46,13 +46,11 @@ class MainController extends AppController
        return $this->render('employees',compact('head','list'));
     }
     
-    public function actionFeedback()
-    {
-       $this->view->title.=' | Обратная связь';
-       $feedback=new FeedbackForm();
-       if ($feedback->load(Yii::$app->request->post())){
+    public function actionFeedback(){
+        $this->view->title.=' | Обратная связь';
+        $feedback=new FeedbackForm();
+        if($feedback->load(Yii::$app->request->post())){
             if($feedback->validate()){
-                
                 $name=Html::encode($feedback->name);
                 $textmessage=Html::encode($feedback->text);
                 $email=Yii::$app->params['adminEmail'];
@@ -77,19 +75,36 @@ class MainController extends AppController
                     ->setSubject('Вы отправили сообщение в компанию ТООИН с текстом')
                     ->setHtmlBody($textmessage)
                     ->send();
-                
                 if($trowadmin&&$trowuser&&$trowdb){
                     Yii::$app->session->setFlash('success','Сообщение отправлено');
                     return $this->refresh();
                 }else{
                     Yii::$app->session->setFlash('error','Произошла ошибка обработки данных');
                     }
-                
             }else{
                 Yii::$app->session->setFlash('error','Неверно введены данные');
                 }  
-       }
-       return $this->render('feedback',compact('feedback')); 
+        }
+        return $this->render('feedback',compact('feedback')); 
+    }
+    
+    public function actionCategory(){
+        $this->view->title.=' | Ассортимент';
+        $system=System::find()->where(['id' => 1])->asArray()->one();
+        $date=$system['date_update'];
+        if(Yii::$app->request->get()){
+            $data=Yii::$app->request->get();
+            $data=(int)$data['id'];
+            $number=ListUrl::find()->where(['id' => $data])->limit(1)->asArray()->one();
+            if(empty($number)){
+                $data=1;
+                $number=ListUrl::find()->where(['id' => $data])->limit(1)->asArray()->one();
+            }
+            $name=$number['name'];
+            $categories=Category::find()->where(['list_id' => $number])->all();
+            
+        }
+        return $this->render('data',compact('categories','name','date')); 
     }
 
 }

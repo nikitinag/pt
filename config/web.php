@@ -57,7 +57,7 @@ $config = [
                 '/' => 'main/index',
                 '<action:logout>' => 'into/<action>',
                 '/kovpak' => 'kovpak/admin/index',
-                '<action:(contact|employees|feedback)>' => 'main/<action>',
+                '<action:(contact|employees|feedback|category)>' => 'main/<action>',
             ],
         ],
 

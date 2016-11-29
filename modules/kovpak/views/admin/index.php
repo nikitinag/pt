@@ -18,9 +18,8 @@ use yii\bootstrap\ActiveForm;
         <? echo Yii::$app->session->getFlash('error') ?>
     </div>
     <? endif; ?>
-    
+    <p class="dateupdate">Дата последнего обновления: <?=$date?></p>
     <p><i>Введите коэффициент с учётом курса валют и вашего дохода.</i></p>
-    
     <?php $form = ActiveForm::begin(['options' => ['class' => 'update']]); ?>
         <?= $form->field($model, 'coefficient')->textInput(['autofocus' => true]) ?>    
         <?= Html::submitButton('Обновить', ['class' => 'btn btn-primary']) ?>    

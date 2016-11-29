@@ -9,7 +9,6 @@ use Yii;
  *
  * @property integer $id
  * @property string $name
- * @property string $link
  * @property string $url_remote
  */
 class ListUrl extends \yii\db\ActiveRecord
@@ -28,8 +27,8 @@ class ListUrl extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'link', 'url_remote'], 'required'],
-            [['name', 'link', 'url_remote'], 'string', 'max' => 255],
+            [['name', 'url_remote'], 'required'],
+            [['name', 'url_remote'], 'string', 'max' => 255],
         ];
     }
 
@@ -41,7 +40,6 @@ class ListUrl extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => 'Name',
-            'link' => 'Link',
             'url_remote' => 'Url Remote',
         ];
     }

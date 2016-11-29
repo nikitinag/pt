@@ -40,12 +40,12 @@ class MenuWidget extends Widget{
         <li class="dropdown">
           <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Ассортимент<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li>'.Html::a("Качественные стали","/categogy/0").'</li>
-            <li>'.Html::a("Трубы","/categogy/1").'</li>
-            <li>'.Html::a("Сортовой прокат","/categogy/2").'</li>
-            <li>'.Html::a("Листовой прокат","/categogy/3").'</li>
-            <li>'.Html::a("Цветной прокат","/categogy/4").'</li>
-            <li>'.Html::a("Нержавейка","/categogy/5").'</li>
+            <li>'.Html::a("Качественные стали","/category?id=1").'</li>
+            <li>'.Html::a("Трубы","/category?id=2").'</li>
+            <li>'.Html::a("Сортовой прокат","/category?id=3").'</li>
+            <li>'.Html::a("Листовой прокат","/category?id=4").'</li>
+            <li>'.Html::a("Цветной прокат","/category?id=5").'</li>
+            <li>'.Html::a("Нержавейка","/category?id=6").'</li>
           </ul>
         </li>
       </ul>

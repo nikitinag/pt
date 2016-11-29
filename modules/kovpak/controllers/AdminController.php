@@ -6,6 +6,7 @@ use yii\web\Controller;
 use Yii;
 use app\models\UpdateForm;
 use app\models\ListUrl;
+use app\models\System;
 use yii\base\ErrorException;
 
 /**
@@ -16,6 +17,8 @@ class AdminController extends AppAdminController
        
     public function actionIndex(){
         $model=new UpdateForm;
+        $system=System::find()->where(['id' => 1])->one();
+        $date=$system->date_update;
         if ($model->load(Yii::$app->request->post())){
             if($model->validate()){
                 $listUrls=ListUrl::find()->all();
@@ -27,6 +30,9 @@ class AdminController extends AppAdminController
                     }
                 }
                 if($result){
+                    $date=date("Y-m-d");
+                    $system->date_update=$date;
+                    $system->save();
                     Yii::$app->session->setFlash('success','Обновление прошло успешно');
                     return $this->refresh();
                 }else{
@@ -36,7 +42,7 @@ class AdminController extends AppAdminController
                 Yii::$app->session->setFlash('error','Неверно введены данные');
                 }
         }
-        return $this->render('index',compact('model'));
+        return $this->render('index',compact('model','date'));
     }
     
     public function actionText(){
