@@ -3,6 +3,7 @@ use yii\helpers\Html;
 use app\models\ListUrl;
 use app\models\Category;
 use app\models\Data;
+use yii\db\ActiveRecord;
 
     function debug($ob){
 	  echo '<pre style="margin-top:50px">'.print_r($ob,true).'</pre>' ;
@@ -29,9 +30,32 @@ use app\models\Data;
         return  $arrayContact;
     }
     
-    //Удаление данных из таблиц Category и Data
-    function deleteData(){
-        if(Category::deleteAll()&&Data::deleteAll()) return true;
+    //Удаление данных из таблиц Category и Data(main) , Category_backup и Data_backup(backup)
+    function deleteData($type){
+        if($type=='main'){
+            if(Category::deleteAll()&&Data::deleteAll()) return true;
+        }elseif($type=='backup'){
+            if(Category_backup::deleteAll()&&Data_backup::deleteAll()) return true;
+        }
+        return false;
+        
+    }
+    
+    //Восстановление основной базы(down) или обновление резервной(up)
+    function UpDownData($type){
+        $connection=Yii::$app->getDb();
+        $connection->open();
+        if($type=='up'){
+            $command = $connection->createCommand('INSERT INTO category_backup SELECT * FROM category;
+                                                   INSERT INTO data_backup SELECT * FROM data');
+            if($command->query()) return true;
+        }
+        if($type=='down'){
+            $command = $connection->createCommand('INSERT INTO category SELECT * FROM category_backup;
+                                                   INSERT INTO data SELECT * FROM data_backup');
+            if($command->query()) return true;
+        }
+        return false;
     }
     
     //Парсинг HTML

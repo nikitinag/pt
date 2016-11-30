@@ -22,7 +22,8 @@ class AdminController extends AppAdminController
         if ($model->load(Yii::$app->request->post())){
             if($model->validate()){
                 $listUrls=ListUrl::find()->all();
-                if(deleteData()){
+                $result=UpDownData('down');
+                /*if(deleteData('main')){
                     foreach($listUrls as $listUrl){
                         try{
                             $result=parseHTML($model->coefficient,$listUrl->url_remote,$listUrl->id);
@@ -30,7 +31,7 @@ class AdminController extends AppAdminController
                             $result=false;
                         }
                     }
-                }
+                }*/
                 if($result){
                     $date=date("Y-m-d");
                     $system->date_update=$date;
