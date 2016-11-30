@@ -22,11 +22,13 @@ class AdminController extends AppAdminController
         if ($model->load(Yii::$app->request->post())){
             if($model->validate()){
                 $listUrls=ListUrl::find()->all();
-                foreach($listUrls as $listUrl){
-                    try{
-                        $result=parseHTML($model->coefficient,$listUrl->url_remote,$listUrl->id);
-                    }catch(ErrorException $e){
-                        $result=false;
+                if(deleteData()){
+                    foreach($listUrls as $listUrl){
+                        try{
+                            $result=parseHTML($model->coefficient,$listUrl->url_remote,$listUrl->id);
+                        }catch(ErrorException $e){
+                            $result=false;
+                        }
                     }
                 }
                 if($result){

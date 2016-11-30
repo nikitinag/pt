@@ -21,12 +21,12 @@ use app\models\Data;
             </div>
             <div id="collapse<?=$i?>" class="panel-collapse collapse">
                 <div class="panel-body">
-                    <p><b><?=$category->item1?></b>   <i><?=$category->item2?></i>   <b><?=$category->type?></b>   <i><?=$category->price?></i></p>
-                    <div>
+                <table class="table table-striped table-condensed">
+                    <tr><th><?=$category->item1?></th><th><?=$category->item2?></th><th><?=$category->type?></th><th><?=$category->price?></th></tr>
                         <?php foreach(Data::find()->where(['category_id' => $category->id])->asArray()->each(10) as $data): ?>
-                            <p><?=$data['item1']?>   <?=$data['item2']?>   <?=$data['type']?>   <?=$data['price']?></p>
+                            <tr><td><?=$data['item1']?></td><td><?=$data['item2']?><td><?=$data['type']?><td><?=$data['price']?></td></tr>
                         <?php endforeach; ?>
-                    </div>
+                </table>
                 </div>
             </div>
         </div>

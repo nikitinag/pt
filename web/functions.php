@@ -29,6 +29,11 @@ use app\models\Data;
         return  $arrayContact;
     }
     
+    //Удаление данных из таблиц Category и Data
+    function deleteData(){
+        if(Category::deleteAll()&&Data::deleteAll()) return true;
+    }
+    
     //Парсинг HTML
     function parseHTML($coefficient,$remoteUrl,$list_id){
         require_once('phpQuery-onefile.php');
