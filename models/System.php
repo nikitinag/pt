@@ -10,6 +10,7 @@ use Yii;
  * @property integer $id
  * @property string $switch
  * @property string $date_update
+ * @property string $backup
  */
 class System extends \yii\db\ActiveRecord
 {
@@ -29,19 +30,7 @@ class System extends \yii\db\ActiveRecord
         return [
             [['switch'], 'required'],
             [['switch'], 'string'],
-            [['date_update'], 'safe'],
-        ];
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function attributeLabels()
-    {
-        return [
-            'id' => 'ID',
-            'switch' => 'Switch',
-            'date_update' => 'Date Update',
+            [['date_update', 'backup'], 'safe'],
         ];
     }
 }

@@ -41,19 +41,30 @@ use yii\db\ActiveRecord;
         
     }
     
-    //Восстановление основной базы(down) или обновление резервной(up)
-    function UpDownData($type){
+    //Восстановление основной базы(down) или обновление резервной(up) и обнуление Category и Data
+    function UpDownDeleteData($type){
         $connection=Yii::$app->getDb();
         $connection->open();
+        if($type=='delete'){
+            
+             $command = $connection->createCommand('TRUNCATE TABLE category;
+                                                    TRUNCATE TABLE data');
+             if($command->query()) return true;
+        }
         if($type=='up'){
-            $command = $connection->createCommand('INSERT INTO category_backup SELECT * FROM category;
-                                                   INSERT INTO data_backup SELECT * FROM data');
-            if($command->query()) return true;
+            
+             $command = $connection->createCommand('TRUNCATE TABLE category_backup;
+                                                    TRUNCATE TABLE data_backup;
+                                                    INSERT INTO category_backup SELECT * FROM category;
+                                                    INSERT INTO data_backup SELECT * FROM data');
+             if($command->query()) return true;
         }
         if($type=='down'){
-            $command = $connection->createCommand('INSERT INTO category SELECT * FROM category_backup;
-                                                   INSERT INTO data SELECT * FROM data_backup');
-            if($command->query()) return true;
+             $command = $connection->createCommand('TRUNCATE TABLE category;
+                                                    TRUNCATE TABLE data;
+                                                    INSERT INTO category SELECT * FROM category_backup;
+                                                    INSERT INTO data SELECT * FROM data_backup');
+             if($command->query()) return true;
         }
         return false;
     }

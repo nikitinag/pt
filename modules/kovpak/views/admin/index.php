@@ -1,5 +1,6 @@
 <?php
 use yii\helpers\Html;
+use yii\helpers\Url;
 use app\models\UpdateForm;
 use yii\bootstrap\ActiveForm;
 ?>
@@ -18,10 +19,16 @@ use yii\bootstrap\ActiveForm;
         <? echo Yii::$app->session->getFlash('error') ?>
     </div>
     <? endif; ?>
-    <p class="dateupdate">Дата последнего обновления: <?=$date?></p>
-    <p><i>Введите коэффициент с учётом курса валют и вашего дохода.</i></p>
+    <p class="dateupdate"><i>Дата последнего обновления: <?=$date?></i></p>
+    <p>Введите коэффициент.</p>
     <?php $form = ActiveForm::begin(['options' => ['class' => 'update']]); ?>
         <?= $form->field($model, 'coefficient')->textInput(['autofocus' => true]) ?>    
-        <?= Html::submitButton('Обновить', ['class' => 'btn btn-primary']) ?>    
-    <?php ActiveForm::end(); ?>  
+        <?= Html::submitButton('Обновить', ['class' => 'btn btn-primary']) ?>
+    <?php ActiveForm::end(); ?>
+    <?php if($backup=='1'):?>
+    <div class="backup">
+        <a href="<?=Url::to('/kovpak?backup=down')?>"><button type="button" class="btn btn-default">Откатить назад</button></a>
+        <a href="<?=Url::to('/kovpak?backup=up')?>"><button type="button" class="btn btn-default">Утвердить изменения</button></a>
+    </div>
+    <? endif; ?> 
 </div>

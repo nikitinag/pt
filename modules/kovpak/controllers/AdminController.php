@@ -13,17 +13,16 @@ use yii\base\ErrorException;
  * Default controller for the `kovpak` module
  */
 class AdminController extends AppAdminController
-{
-       
+{   
     public function actionIndex(){
         $model=new UpdateForm;
         $system=System::find()->where(['id' => 1])->one();
         $date=$system->date_update;
+        $backup=$system->backup;
         if ($model->load(Yii::$app->request->post())){
             if($model->validate()){
                 $listUrls=ListUrl::find()->all();
-                $result=UpDownData('down');
-                /*if(deleteData('main')){
+                if(UpDownDeleteData('delete')){
                     foreach($listUrls as $listUrl){
                         try{
                             $result=parseHTML($model->coefficient,$listUrl->url_remote,$listUrl->id);
@@ -31,12 +30,14 @@ class AdminController extends AppAdminController
                             $result=false;
                         }
                     }
-                }*/
+                }
                 if($result){
                     $date=date("Y-m-d");
                     $system->date_update=$date;
+                    $system->backup='1';
                     $system->save();
-                    Yii::$app->session->setFlash('success','Обновление прошло успешно');
+                    $coefficient=' с коэффициентом '.$model->coefficient;
+                    Yii::$app->session->setFlash('success','Обновление прошло успешно'.$coefficient);
                     return $this->refresh();
                 }else{
                     Yii::$app->session->setFlash('error','Ошибка обновления');
@@ -45,7 +46,29 @@ class AdminController extends AppAdminController
                 Yii::$app->session->setFlash('error','Неверно введены данные');
                 }
         }
-        return $this->render('index',compact('model','date'));
+        if($get=Yii::$app->request->get()){
+            $resultBackup=false;
+            if($get['backup']=='up'){
+                if(UpDownDeleteData('up')){
+                    $resultBackup='Новая база данных утверждена';
+                }
+            }
+            if($get['backup']=='down'){
+                if(UpDownDeleteData('down')){
+                    $resultBackup='База данных восстановлена';
+                }
+            }
+            if($resultBackup){
+                $backup='0';
+                $system->backup='0';
+                $system->save();
+                Yii::$app->session->setFlash('success',$resultBackup);
+                return Yii::$app->response->redirect(['/kovpak']);
+            }else{
+                Yii::$app->session->setFlash('error','Ошибка операции');
+            }
+        }
+        return $this->render('index',compact('model','date','backup'));
     }
     
     public function actionText(){
