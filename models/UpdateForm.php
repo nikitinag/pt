@@ -12,7 +12,7 @@ class UpdateForm extends Model
     public function rules()
     {
         return [
-            ['coefficient', 'required'],
+            ['coefficient', 'required', 'message' => ''],
             ['coefficient', 'number'],
         ];
     }

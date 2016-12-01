@@ -7,7 +7,7 @@ use Yii;
 use app\models\UpdateForm;
 use app\models\ListUrl;
 use app\models\System;
-use yii\base\ErrorException;
+use app\models\AdminForm;
 
 /**
  * Default controller for the `kovpak` module
@@ -77,6 +77,15 @@ class AdminController extends AppAdminController
     }
     
     public function actionLogin(){
-        return $this->render('login');
+        $model = new AdminForm();
+        if($model->load(Yii::$app->request->post())) {
+            if($model->update()){
+                Yii::$app->session->setFlash('success','Обновление прошло успешно');
+                return $this->refresh();
+            }else{
+            Yii::$app->session->setFlash('error','Ошибка операции');
+            }
+        }       
+        return $this->render('login', compact('model'));
     }
 }

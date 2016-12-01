@@ -39,6 +39,13 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return static::findOne(['login' =>$username]);
     }
+    
+    public function UpdateUser($username,$password)
+    {
+        $this->login=$username;
+        $this->password=$password;
+        return $this->save();
+    }
 
     /**
      * @inheritdoc
@@ -68,7 +75,7 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return $this->login_key=Yii::$app->getSecurity()->generateRandomString();
     }
-
+    
     /**
      * Validates password
      *
