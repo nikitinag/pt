@@ -32,8 +32,6 @@ class AdminController extends AppAdminController
                     }
                 }
                 if($result){
-                    $date=date("Y-m-d");
-                    $system->date_update=$date;
                     $system->backup='1';
                     $system->save();
                     $coefficient=' с коэффициентом '.$model->coefficient;
@@ -51,6 +49,8 @@ class AdminController extends AppAdminController
             if($get['backup']=='up'){
                 if(UpDownDeleteData('up')){
                     $resultBackup='Новая база данных утверждена';
+                    $date=date("Y-m-d");
+                    $system->date_update=$date;
                 }
             }
             if($get['backup']=='down'){
@@ -66,6 +66,7 @@ class AdminController extends AppAdminController
                 return Yii::$app->response->redirect(['/kovpak']);
             }else{
                 Yii::$app->session->setFlash('error','Ошибка операции');
+                return Yii::$app->response->redirect(['/kovpak']);
             }
         }
         return $this->render('index',compact('model','date','backup'));
@@ -73,5 +74,9 @@ class AdminController extends AppAdminController
     
     public function actionText(){
         return $this->render('text');
+    }
+    
+    public function actionLogin(){
+        return $this->render('login');
     }
 }

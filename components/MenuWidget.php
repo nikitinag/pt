@@ -11,13 +11,10 @@ class MenuWidget extends Widget{
     
     protected $text;
       
-    public function run(){
-        
-        $cache=Yii::$app->cache->get('menu');
-        if($cache) return $cache;
-        
+    public function run(){        
         $above=Info::find('text_above')->asArray()->one();
         $this->text.='<section class="line"><p>'.$above['text_above'].'</p></section>';
+        $urladmin=!Yii::$app->user->isGuest?'<li>'.Html::a("Админка","/kovpak").'</li>':'';
         $this->text.='<nav class="navbar navbar-inverse">
             <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -32,9 +29,9 @@ class MenuWidget extends Widget{
             </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li>'.Html::a("Админка","/kovpak").'</li>
-        <li>'.Html::a("Контакты","/contact").'</li>
+      <ul class="nav navbar-nav navbar-right">'
+        .$urladmin.
+        '<li>'.Html::a("Контакты","/contact").'</li>
         <li>'.Html::a("Вакансии","/employees").'</li>
         <li>'.Html::a("Обратная связь","/feedback").'</li>
         <li class="dropdown">
@@ -52,8 +49,6 @@ class MenuWidget extends Widget{
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container -->
 </nav>';
-        
-        Yii::$app->cache->set('menu',$this->text,60);
         return $this->text;
     }
 }

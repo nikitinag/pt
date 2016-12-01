@@ -6,7 +6,7 @@ use app\models\Data;
 
 <div id="main-content" class="main-content">
     <h3><?=$name?></h3>
-    <p>Дата последнего обновления: <?=$date?></p>
+    <p><i>Дата последнего обновления: <?=$date?></i></p>
     
     <div class="panel-group" id="accordion">
         <?php $i=0;foreach($categories as $category): ?>
@@ -32,4 +32,5 @@ use app\models\Data;
         </div>
         <?php endforeach; ?>
     </div>
+    <p><i>Дата последнего обновления: <?=$date?></i></p>
 </div>
