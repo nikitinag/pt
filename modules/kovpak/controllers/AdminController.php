@@ -7,6 +7,7 @@ use Yii;
 use app\models\UpdateForm;
 use app\models\ListUrl;
 use app\models\System;
+use app\models\Info;
 use app\modules\kovpak\models\AdminForm;
 
 /**
@@ -72,8 +73,18 @@ class AdminController extends AppAdminController
         return $this->render('index',compact('model','date','backup'));
     }
     
-    public function actionText(){
-        return $this->render('text');
+    public function actionText()
+    {
+        $model = Info::find()->one();
+
+        if ($model->load(Yii::$app->request->post())) {
+            if($model->save()){
+                Yii::$app->session->setFlash('success','Обновление прошло успешно');
+            } else {
+                Yii::$app->session->setFlash('error','Ошибка обновления');
+            }
+        }    
+        return $this->render('text', compact('model'));
     }
     
     public function actionLogin(){
