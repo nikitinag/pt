@@ -7,7 +7,7 @@ use Yii;
 use app\models\UpdateForm;
 use app\models\ListUrl;
 use app\models\System;
-use app\models\AdminForm;
+use app\modules\kovpak\models\AdminForm;
 
 /**
  * Default controller for the `kovpak` module
