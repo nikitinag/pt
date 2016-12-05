@@ -8,10 +8,16 @@ use yii\captcha\Captcha;
 <div id="main-content" class="main-content">
     <h3>Форма обратной связи</h3>
     <? if(Yii::$app->session->hasFlash('success')): ?>
+    <div class="alert alert-success" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <? echo Yii::$app->session->getFlash('success') ?>
+    </div>    
     <? endif; ?>
     <? if(Yii::$app->session->hasFlash('error')): ?>
+    <div class="alert alert-danger" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <? echo Yii::$app->session->getFlash('error') ?>
+    </div>
     <? endif; ?>
     
     <p><i>* - поля, обязательные для заполнения</i></p>

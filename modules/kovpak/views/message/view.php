@@ -4,22 +4,21 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model app\modules\kovpak\models\Contact */
+/* @var $model app\modules\kovpak\models\Message */
 
-$this->title = 'Контакт';
-$this->params['breadcrumbs'][] = ['label' => 'Контакты', 'url' => ['index']];
+$this->title = 'Сообщение от '.$model->name;
+$this->params['breadcrumbs'][] = ['label' => 'Сообщения', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="contact-view">
+<div class="message-view">
 
     <h3><?= Html::encode($this->title) ?></h3>
 
     <p>
-        <?= Html::a('Изменить', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
         <?= Html::a('Удалить', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Вы хотите удалить этот контакт?',
+                'confirm' => 'Удалить это сообщение?',
                 'method' => 'post',
             ],
         ]) ?>
@@ -29,8 +28,10 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             //'id',
-            'type',
-            'contact:ntext',
+            'name',
+            'email:email',
+            'text:ntext',
+            'date',
         ],
     ]) ?>
 

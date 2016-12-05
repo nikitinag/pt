@@ -42,11 +42,11 @@ class Message extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'id' => 'ID',
-            'name' => 'Name',
+            'id' => '',
+            'name' => 'Имя',
             'email' => 'Email',
-            'text' => 'Text',
-            'date' => 'Date',
+            'text' => 'Текст',
+            'date' => 'Дата',
         ];
     }
 }
