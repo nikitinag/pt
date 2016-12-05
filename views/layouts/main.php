@@ -26,7 +26,13 @@ AppAsset::register($this);
 <header class="navbar-fixed-top">
 
     <!--Menu-->
-    <?=app\components\MenuWidget::widget(); ?>
+    <?php if($cache=Yii::$app->cache->get('menu')): ?>
+    <?= $cache ?>
+    <?php else: ?>
+    <? $menu=app\components\MenuWidget::widget();
+       Yii::$app->cache->set('menu',$menu,60);
+       echo $menu; ?>
+    <?php endif; ?>
 
     <!--Calculator-->
     <section class="section-calculator">
