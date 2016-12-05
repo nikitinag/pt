@@ -19,7 +19,7 @@ use yii\bootstrap\ActiveForm;
         <? echo Yii::$app->session->getFlash('error') ?>
     </div>
     <? endif; ?>
-    <p class="dateupdate"><i>Дата последнего обновления: <?=$date?></i></p>
+    <p class="dateupdate"><i>Дата последнего обновления: <?=formatDate($date)?></i></p>
     <p>Введите коэффициент.</p>
     <?php $form = ActiveForm::begin(['options' => ['class' => 'update']]); ?>
         <?= $form->field($model, 'coefficient')->textInput(['autofocus' => true]) ?>    

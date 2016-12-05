@@ -136,7 +136,7 @@ use yii\db\ActiveRecord;
             $time=' '.$datestring[1];
         }
         $dateArray=explode('-',$datetime);
-        asort($dateArray);
+        krsort($dateArray);
         $date=implode('-',$dateArray);
         return $date.$time;
     }
