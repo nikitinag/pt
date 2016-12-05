@@ -4,13 +4,13 @@ use yii\helpers\Html;
 
 
 /* @var $this yii\web\View */
-/* @var $model app\modules\kovpak\models\Employees */
+/* @var $model app\modules\kovpak\models\Contact */
 
-$this->title = 'Создание вакансии';
-$this->params['breadcrumbs'][] = ['label' => 'Вакансии', 'url' => ['index']];
+$this->title = 'Новый контакт';
+$this->params['breadcrumbs'][] = ['label' => 'Контакты', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="employees-create">
+<div class="contact-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

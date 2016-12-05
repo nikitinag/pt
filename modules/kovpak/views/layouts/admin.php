@@ -35,7 +35,7 @@ echo Nav::widget([
         ['label' => 'Обновление ассортимента', 'url' => ['/kovpak']],
         ['label' => 'Текст на главной странице', 'url' => ['/kovpak/admin/text']],
         ['label' => 'Вакансии', 'url' => ['/kovpak/employees']],
-        ['label' => 'Сообщения', 'url' => ['/kovpak/admin/message']],
+        ['label' => 'Сообщения', 'url' => ['/kovpak/message']],
         ['label' => 'Контакты', 'url' => ['/kovpak/contact']],
         ['label' => 'Логин и пароль', 'url' => ['/kovpak/admin/login']],
         ['label' => 'Перейти на сайт', 'url' => ['/']],

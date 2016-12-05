@@ -5,7 +5,8 @@ use app\models\Category;
 use app\models\Data;
 use yii\db\ActiveRecord;
 
-    function debug($ob){
+    function debug($ob)
+    {
 	  echo '<pre style="margin-top:50px">'.print_r($ob,true).'</pre>' ;
 	}
     
@@ -31,7 +32,8 @@ use yii\db\ActiveRecord;
     }
     
     //Удаление данных из таблиц Category и Data(main) , Category_backup и Data_backup(backup)
-    function deleteData($type){
+    function deleteData($type)
+    {
         if($type=='main'){
             if(Category::deleteAll()&&Data::deleteAll()) return true;
         }elseif($type=='backup'){
@@ -42,7 +44,8 @@ use yii\db\ActiveRecord;
     }
     
     //Восстановление основной базы(down) или обновление резервной(up) и обнуление Category и Data
-    function UpDownDeleteData($type){
+    function UpDownDeleteData($type)
+    {
         $connection=Yii::$app->getDb();
         $connection->open();
         if($type=='delete'){
@@ -68,9 +71,10 @@ use yii\db\ActiveRecord;
         }
         return false;
     }
-    
+                
     //Парсинг HTML
-    function parseHTML($coefficient,$remoteUrl,$list_id){
+    function parseHTML($coefficient,$remoteUrl,$list_id)
+    {
         require_once('phpQuery-onefile.php');
         $document = phpQuery::newDocumentFile($remoteUrl);
         $bodys=$document->find('tbody');
@@ -81,9 +85,8 @@ use yii\db\ActiveRecord;
             $i=0;foreach($trs as $tr){
                     $i++;
                     if($i==1){
-                        
-                        $ths=pq($tr)->find('th');
-                        $category->name=pq($ths)->text();
+                        $ths=pq($tr)->find('th');                       
+                        $category->name=pq($ths)->text();;                        
                     }
                     if($i==2){
                         $ths=pq($tr)->find('th');
