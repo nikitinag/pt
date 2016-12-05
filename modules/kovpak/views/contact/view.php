@@ -33,5 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'contact:ntext',
         ],
     ]) ?>
+    
+    <?= Html::a("Вернуться к списку","/kovpak/contact") ?>
 
 </div>

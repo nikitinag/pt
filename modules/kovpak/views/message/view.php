@@ -31,8 +31,14 @@ $this->params['breadcrumbs'][] = $this->title;
             'name',
             'email:email',
             'text:ntext',
-            'date',
+            [
+                'class' => 'yii\grid\DataColumn',
+                'value' => formatDate($model->date),
+                'attribute' => 'Дата',
+            ],
         ],
     ]) ?>
+    
+    <?= Html::a("Вернуться к списку","/kovpak/message") ?>
 
 </div>

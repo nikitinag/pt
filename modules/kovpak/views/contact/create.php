@@ -17,5 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= $this->render('_form', [
         'model' => $model,
     ]) ?>
+    
+    <?= Html::a("Вернуться к списку","/kovpak/contact") ?>
 
 </div>

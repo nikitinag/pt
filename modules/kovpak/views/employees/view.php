@@ -31,7 +31,11 @@ $this->params['breadcrumbs'][] = $this->title;
             //'id',
             'name',
             'text_desc:html',
-            'date',
+            [
+                'class' => 'yii\grid\DataColumn',
+                'value' => formatDate($model->date),
+                'attribute' => 'Дата',
+            ],
             [
                 'attribute' => 'watch',
                 'value' => !$model->watch ? '<span class="text-danger">Скрыт</span>':'<span class="text-success">Показан</span>',
@@ -40,5 +44,7 @@ $this->params['breadcrumbs'][] = $this->title;
             //'watch',
         ],
     ]) ?>
+    
+    <?= Html::a("Вернуться к списку","/kovpak/employees") ?>
 
 </div>

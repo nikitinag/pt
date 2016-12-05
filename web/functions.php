@@ -125,4 +125,19 @@ use yii\db\ActiveRecord;
         unset($document);
         return true;
     }
+    
+    //Формат даты
+    function formatDate($datetime)
+    {
+        $time='';
+        if(strlen($datetime)>10){
+            $datestring=explode(' ',$datetime);
+            $datetime=$datestring[0];
+            $time=' '.$datestring[1];
+        }
+        $dateArray=explode('-',$datetime);
+        asort($dateArray);
+        $date=implode('-',$dateArray);
+        return $date.$time;
+    }
 ?>

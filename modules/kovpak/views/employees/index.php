@@ -24,7 +24,12 @@ $this->params['breadcrumbs'][] = $this->title;
             //'id',
             'name',
             //'text_desc:ntext',
-            'date',
+            [
+            'class' => 'yii\grid\DataColumn',
+            'value' => function ($data) {
+                return formatDate($data->date);
+                },
+            ],
             [
                 'attribute' => 'watch',
                 'value' => function($data){

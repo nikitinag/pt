@@ -10,7 +10,7 @@ use yii\helpers\Html;
         <? foreach($list as $employ): ?>
            <ul>
            <h4><?=$employ['name']?></h4>
-           <p>Дата выставления <?=$employ['date']?><span><?=Html::a("  Просмотреть...","/employees?id={$employ['id']}")?></span></p>
+           <p>Дата выставления <?=formatDate($employ['date'])?><span><?=Html::a("  Просмотреть...","/employees?id={$employ['id']}")?></span></p>
            </ul>
         <? endforeach; ?>
     </div>

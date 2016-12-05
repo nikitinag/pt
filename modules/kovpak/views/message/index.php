@@ -27,7 +27,12 @@ $this->params['breadcrumbs'][] = $this->title;
                 return substr($data->text,0,20);
                 },
             ],
-            'date',
+            [
+            'class' => 'yii\grid\DataColumn',
+            'value' => function ($data) {
+                return formatDate($data->date);
+                },
+            ],
 
             ['class' => 'yii\grid\ActionColumn', 'template' => '{view} {delete}'],
         ],
