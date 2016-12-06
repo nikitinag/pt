@@ -101,7 +101,7 @@ NavBar::end(); ?>
             ?> 
         </div>
         
-        <div class="col-sm-8 block">
+        <div class="col-sm-8 block admin">
             <?= $content ?>
         </div>
 

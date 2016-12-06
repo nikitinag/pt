@@ -39,6 +39,6 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]) ?>
     
-    <?= Html::a("Вернуться к списку","/kovpak/message") ?>
+    <h4><?= Html::a("Вернуться к списку","/kovpak/message") ?></h4>
 
 </div>

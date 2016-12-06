@@ -14,7 +14,7 @@ use yii\db\ActiveRecord;
     function arrayContacts($contacts,$tag='li'){
        $type=[
                 1=>'телефон-факс',
-                2=>'мобильный тел.',
+                2=>'мобильный телефон',
                 3=>'эл.почта',
                 4=>'адрес',
               ];

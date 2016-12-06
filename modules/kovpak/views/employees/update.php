@@ -18,6 +18,6 @@ $this->params['breadcrumbs'][] = 'Update';
         'model' => $model,
     ]) ?>
     
-    <?= Html::a("Вернуться к списку","/kovpak/employees") ?>
+    <h4><?= Html::a("Вернуться к списку","/kovpak/employees") ?></h4>
 
 </div>

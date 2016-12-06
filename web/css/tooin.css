@@ -1,5 +1,5 @@
 body{
-    font-family: arial;
+    font-family: arial!important;
     font-size: 14px;
     min-width:320px;
     background-color: #fff;
@@ -164,14 +164,36 @@ h4{
 .main-content img{
    margin-bottom: 15px; 
 }
+.contact ul{
+    margin-left: 35px;
+    padding-bottom: 20px;
+}
+.gly{
+    font-size: 14px;
+}
+.type{
+    margin-left: 5px;
+    font-size: 18px;
+    font-family: arial;
+    font-weight: bold;
+}
+.map{
+    margin:15px 0;
+    border: 5px inset #000;
+}
 
+/*---employees---*/
 
+.employees span{
+    margin-left: 10px;
+    font-weight: bold;
+}
 
 /*---footer---*/
 
 footer{
     margin-top: 15px;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
     background-color: #000033;
     font-size: 11px;
     color: #cccccc;

@@ -18,6 +18,6 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
     ]) ?>
     
-    <?= Html::a("Вернуться к списку","/kovpak/contact") ?>
+    <h4><?= Html::a("Вернуться к списку","/kovpak/contact") ?></h4>
 
 </div>

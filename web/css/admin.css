@@ -27,6 +27,16 @@ h2{
     font-size: 22px;
     font-weight: bold;
 }
+h3{
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+h4{
+    padding-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
 .nav{
     margin: 20px 0;
     font-size: 18px;
@@ -34,6 +44,17 @@ h2{
 }
 .update input{
     width: 100px;
+}
+.form-control, .input-group-addon, .btn{
+    border-radius: 0;
+}
+.admin > button{
+    margin-top: 10px;
+    border-color: #000033!important;
+    color: #000033!important;
+}
+.admin > button:hover{
+    background-color: #6699ff!important;
 }
 .backup{
     margin-top: 15px;

@@ -40,7 +40,7 @@ $this->params['breadcrumbs'][] = $this->title;
     ]); ?>
 <p>
     <?php if($dataProvider->getCount()>1): ?>
-    <?= Html::a('Удалить все', ['/kovpak/message', 'delete' => 1], ['class' => 'end-link']) ?>
+    <h4><?= Html::a('Удалить все', ['/kovpak/message', 'delete' => 1], ['class' => 'end-link']) ?></h4>
     <?php endif; ?>
 </p>
 </div>
