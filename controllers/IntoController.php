@@ -25,7 +25,7 @@ class IntoController extends \yii\web\Controller
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            Yii::$app->cache->delete('menu',$navbar,60);
+            Yii::$app->cache->delete('menu');
             return $this->goBack();
         }
         
@@ -42,7 +42,7 @@ class IntoController extends \yii\web\Controller
     public function actionLogout()
     {
         Yii::$app->user->logout();
-        Yii::$app->cache->delete('menu',$navbar,60);
+        Yii::$app->cache->delete('menu');
         return $this->goHome();
     }
 }

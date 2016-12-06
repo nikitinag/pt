@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+use yii\helpers\Url;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
@@ -37,4 +38,9 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\ActionColumn', 'template' => '{view} {delete}'],
         ],
     ]); ?>
+<p>
+    <?php if($dataProvider->getCount()>1): ?>
+    <?= Html::a('Удалить все', ['/kovpak/message', 'delete' => 1], ['class' => 'end-link']) ?>
+    <?php endif; ?>
+</p>
 </div>

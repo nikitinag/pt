@@ -1,9 +1,9 @@
 <?php
-use app\assets\AppAsset;
+use app\assets\AdminAsset;
 use yii\helpers\Html;
 use yii\helpers\Url;
 
-AppAsset::register($this);
+AdminAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -26,5 +26,7 @@ AppAsset::register($this);
 <div class="into">
     <?= $content ?>
 </div>
+<?php $this->endBody() ?>
+</body>
 </html>
 <?php $this->endPage() ?>

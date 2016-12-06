@@ -33,7 +33,7 @@ AdminAsset::register($this);
 echo Nav::widget([
     'items' => [
         ['label' => 'Обновление ассортимента', 'url' => ['/kovpak']],
-        ['label' => 'Текст на главной странице', 'url' => ['/kovpak/admin/text']],
+        ['label' => 'Текст на главной странице', 'url' => ['/kovpak/text']],
         ['label' => 'Вакансии', 'url' => ['/kovpak/employees']],
         ['label' => 'Сообщения', 'url' => ['/kovpak/message']],
         ['label' => 'Контакты', 'url' => ['/kovpak/contact']],

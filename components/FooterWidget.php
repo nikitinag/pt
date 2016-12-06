@@ -39,7 +39,7 @@ class FooterWidget extends Widget{
         $row=Html::tag('div',$this->footerLeft.$this->footerRight,['class' => 'row']);
         $this->footer=Html::tag('div',$row,['class' => 'container']);
         
-        Yii::$app->cache->set('footer',$this->footer,60);
+        Yii::$app->cache->set('footer',$this->footer,3600);
         return $this->footer;
     }
 

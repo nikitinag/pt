@@ -29,6 +29,10 @@ class MessageController extends AppAdminController
 
     public function actionIndex()
     {
+        if($_GET['delete']==1){
+             Message::deleteAll();
+             return $this->redirect(['/kovpak/message']);
+        }
         $dataProvider = new ActiveDataProvider([
             'query' => Message::find(),
             'pagination' => [
