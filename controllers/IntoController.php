@@ -42,7 +42,6 @@ class IntoController extends \yii\web\Controller
     public function actionLogout()
     {
         Yii::$app->user->logout();
-        Yii::$app->cache->delete('menu');
         return $this->goHome();
     }
 }
