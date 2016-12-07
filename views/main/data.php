@@ -5,6 +5,7 @@ use app\models\Data;
 ?>
 
 <div id="main-content" class="main-content">
+    <?php if($categories): ?>
     <h3><?=$name?></h3>
     <p><i>Дата последнего обновления: <?=formatDate($date)?></i></p>
     
@@ -33,4 +34,7 @@ use app\models\Data;
         <?php endforeach; ?>
     </div>
     <p><i>Дата последнего обновления: <?=formatDate($date)?></i></p>
+    <?php else: ?>
+        <h3>Ошибка базы данных</h3>
+    <?php endif; ?>
 </div>
