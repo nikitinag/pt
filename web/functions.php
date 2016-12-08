@@ -1,4 +1,5 @@
 <?php
+
 use yii\helpers\Html;
 use app\models\ListUrl;
 use app\models\Category;
@@ -30,19 +31,7 @@ use yii\db\ActiveRecord;
         
         return  $arrayContact;
     }
-    
-    //Удаление данных из таблиц Category и Data(main) , Category_backup и Data_backup(backup)
-    function deleteData($type)
-    {
-        if($type=='main'){
-            if(Category::deleteAll()&&Data::deleteAll()) return true;
-        }elseif($type=='backup'){
-            if(Category_backup::deleteAll()&&Data_backup::deleteAll()) return true;
-        }
-        return false;
         
-    }
-    
     //Восстановление основной базы(down) или обновление резервной(up) и обнуление Category и Data
     function UpDownDeleteData($type)
     {

@@ -42,6 +42,12 @@ AppAsset::register($this);
     <div class="row">
         <div class="col-sm-4 block">
             <?=app\components\CalculatorWidget::widget(); ?>
+            
+            <section class="carrency hidden-xs">
+                <h3>Курсы валют</h3>
+                <?=app\components\CurrencyWidget::widget() ?>
+            </section>
+            
         </div>
         
         <div class="col-sm-8 block">
