@@ -1,5 +1,32 @@
 $(document).ready(function(){
 
+//Курсы валют
+$.ajax({
+  type: 'GET',
+  url: 'http://www.nbrb.by/API/ExRates/Rates',
+  data: 'Periodicity=0',
+  dataType: 'json',
+  success: function(data){
+    var resultLg='';
+    var resultXs='';
+    reg=/145|292|298/;
+    data.forEach(function(curr){
+        if(reg.test(curr.Cur_ID)){
+            result=curr.Cur_Abbreviation+' '+curr.Cur_Scale+' <span class="glyphicon glyphicon-arrow-right"></span> '+curr.Cur_OfficialRate;
+            resultLg+='<p>'+result+'</p>';
+            resultXs+='<span>'+result+'</span>';
+        }
+    });
+    date=data[0].Date.substr(0,10);
+    $('.currency_date').html('на дату '+date);
+    $('.lg').html(resultLg);
+    $('.xs').html(resultXs);
+  },
+  error: function(){
+    $('.currency_date').append('Сервис недоступен');
+  }
+});
+
 //Определение IE
 var controlIE=0;
 if(navigator.userAgent.search(/MSIE 8./) > 0) controlIE=1;

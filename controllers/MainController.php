@@ -15,20 +15,23 @@ use app\models\Category;
 class MainController extends AppController
 {
     
-    public function actionIndex(){
+    public function actionIndex()
+    {
         $info=Info::find()->asArray()->all();
         $text=$info[0][text];
         return $this->render('index',compact('text'));
     }
     
-    public function actionContact(){
+    public function actionContact()
+    {
        $this->view->title.=' | Контакты';
        $contacts=Contact::find()->asArray()->all();
        $text=arrayContacts($contacts);
        return $this->render('contact',compact('text')); 
     }
     
-    public function actionEmployees(){
+    public function actionEmployees()
+    {
        $this->view->title.=' | Вакансии';
        $head='На данный момент предприятию не требуются сотрудники.';
        $list=null;
@@ -46,7 +49,8 @@ class MainController extends AppController
        return $this->render('employees',compact('head','list'));
     }
     
-    public function actionFeedback(){
+    public function actionFeedback()
+    {
         $this->view->title.=' | Обратная связь';
         $feedback=new FeedbackForm();
         if($feedback->load(Yii::$app->request->post())){
@@ -88,7 +92,8 @@ class MainController extends AppController
         return $this->render('feedback',compact('feedback')); 
     }
     
-    public function actionCategory(){
+    public function actionCategory()
+    {
         $this->view->title.=' | Ассортимент';
         $system=System::find()->where(['id' => 1])->asArray()->one();
         $date=$system['date_update'];
