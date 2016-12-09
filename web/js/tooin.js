@@ -18,7 +18,7 @@ $.ajax({
         }
     });
     date=data[0].Date.substr(0,10);
-    $('.currency_date').html('на дату '+date);
+    $('.currency_date').html('НБ на дату '+date);
     $('.lg').html(resultLg);
     $('.xs').html(resultXs);
   },

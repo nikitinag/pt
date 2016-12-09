@@ -14,7 +14,7 @@ use app\modules\kovpak\models\AdminForm;
  * Default controller for the `kovpak` module
  */
 class AdminController extends AppAdminController
-{   
+{
     public function actionIndex(){
         $model=new UpdateForm;
         $system=System::find()->where(['id' => 1])->one();
@@ -23,23 +23,24 @@ class AdminController extends AppAdminController
         if ($model->load(Yii::$app->request->post())){
             if($model->validate()){
                 $listUrls=ListUrl::find()->all();
+                if(empty($listUrls)){
+                    Yii::$app->session->setFlash('error', 'Ошибка базы данных');
+                    return Yii::$app->response->redirect(['/kovpak']);
+                }
                 if(UpDownDeleteData('delete')){
                     foreach($listUrls as $listUrl){
-                        try{
-                            $result=parseHTML($model->coefficient,$listUrl->url_remote,$listUrl->id);
-                        }catch(ErrorException $e){
-                            $result=false;
-                        }
+                        $result=parseHTML($model->coefficient,$listUrl->url_remote,$listUrl->id);
+                        $system->backup = '1';
+                        $system->save();
                     }
                 }
                 if($result){
-                    $system->backup='1';
-                    $system->save();
                     $coefficient=' с коэффициентом '.$model->coefficient;
                     Yii::$app->session->setFlash('success','Обновление прошло успешно'.$coefficient);
                     return $this->refresh();
                 }else{
                     Yii::$app->session->setFlash('error','Ошибка обновления');
+                    return Yii::$app->response->redirect(['/kovpak']);
                 }
             }else{
                 Yii::$app->session->setFlash('error','Неверно введены данные');
