@@ -2,10 +2,6 @@
 
 use yii\helpers\Html;
 
-
-/* @var $this yii\web\View */
-/* @var $model app\modules\kovpak\models\Employees */
-
 $this->title = 'Создание вакансии';
 $this->params['breadcrumbs'][] = ['label' => 'Вакансии', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
@@ -18,6 +14,6 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
     ]) ?>
     
-    <h4><?= Html::a("Вернуться к списку","/kovpak/employees") ?></h4>
+    <h4><?= Html::a('Вернуться к списку', '/kovpak/employees') ?></h4>
 
 </div>

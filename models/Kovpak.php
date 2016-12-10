@@ -4,27 +4,13 @@ namespace app\models;
 
 use Yii;
 
-/**
- * This is the model class for table "kovpak".
- *
- * @property integer $id
- * @property string $login
- * @property string $password
- * @property string $login_key
- */
 class Kovpak extends \yii\db\ActiveRecord
 {
-    /**
-     * @inheritdoc
-     */
     public static function tableName()
     {
         return 'kovpak';
     }
 
-    /**
-     * @inheritdoc
-     */
     public function rules()
     {
         return [
@@ -33,9 +19,6 @@ class Kovpak extends \yii\db\ActiveRecord
         ];
     }
 
-    /**
-     * @inheritdoc
-     */
     public function attributeLabels()
     {
         return [

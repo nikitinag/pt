@@ -3,9 +3,6 @@
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 
-/* @var $this yii\web\View */
-/* @var $model app\modules\kovpak\models\Message */
-
 $this->title = 'Сообщение от '.$model->name;
 $this->params['breadcrumbs'][] = ['label' => 'Сообщения', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
@@ -39,6 +36,6 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]) ?>
     
-    <h4><?= Html::a("Вернуться к списку","/kovpak/message") ?></h4>
+    <h4><?= Html::a('Вернуться к списку', '/kovpak/message') ?></h4>
 
 </div>

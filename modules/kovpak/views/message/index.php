@@ -4,9 +4,6 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\GridView;
 
-/* @var $this yii\web\View */
-/* @var $dataProvider yii\data\ActiveDataProvider */
-
 $this->title = 'Сообщения';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -25,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
             'class' => 'yii\grid\DataColumn',
             'value' => function ($data) {
-                return substr($data->text,0,20);
+                return substr($data->text, 0, 20);
                 },
             ],
             [

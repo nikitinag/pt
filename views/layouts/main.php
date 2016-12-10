@@ -12,7 +12,7 @@ AppAsset::register($this);
     <meta charset="<?= Yii::$app->charset ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
-    <title><?=Html::encode($this->title)?></title>    
+    <title><?= Html::encode($this->title) ?></title>    
     <?php $this->head() ?>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -26,7 +26,7 @@ AppAsset::register($this);
 <header class="navbar-fixed-top">
 
     <!--Menu-->
-    <?=app\components\MenuWidget::widget() ?>
+    <?= app\components\MenuWidget::widget() ?>
 
     <!--Calculator-->
     <section class="section-calculator">
@@ -41,7 +41,7 @@ AppAsset::register($this);
 <div class="container">
     <div class="row">
         <div class="col-sm-4 block">
-            <?=app\components\CalculatorWidget::widget(); ?>
+            <?= app\components\CalculatorWidget::widget() ?>
             
             <section class="currency hidden-xs">
                 <h3>Курсы валют</h3>
@@ -66,7 +66,7 @@ AppAsset::register($this);
 </div><!--/.main-->
 
 <footer>
-    <?=app\components\FooterWidget::widget(); ?>
+    <?= app\components\FooterWidget::widget() ?>
 </footer>
 <?php $this->endBody() ?>
 </body>

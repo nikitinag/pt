@@ -3,10 +3,6 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 
-/* @var $this yii\web\View */
-/* @var $dataProvider yii\data\ActiveDataProvider */
-
-
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="employees-index">
@@ -33,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'watch',
                 'value' => function($data){
-                    return !$data->watch ? '<span class="text-danger">Скрыт</span>':'<span class="text-success">Показан</span>';
+                    return !$data->watch ? '<span class="text-danger">Скрыт</span>' : '<span class="text-success">Показан</span>';
                 },
                 'format' => 'html'
             ],

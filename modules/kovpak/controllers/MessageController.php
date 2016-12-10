@@ -9,9 +9,6 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
-/**
- * MessageController implements the CRUD actions for Message model.
- */
 class MessageController extends AppAdminController
 {
 
@@ -29,7 +26,7 @@ class MessageController extends AppAdminController
 
     public function actionIndex()
     {
-        if($_GET['delete']==1){
+        if($_GET['delete'] == 1){
              Message::deleteAll();
              return $this->redirect(['/kovpak/message']);
         }
@@ -69,7 +66,7 @@ class MessageController extends AppAdminController
         if (($model = Message::findOne($id)) !== null) {
             return $model;
         } else {
-            throw new NotFoundHttpException('The requested page does not exist.');
+            throw new NotFoundHttpException('Такого сообщения не существует.');
         }
     }
 }

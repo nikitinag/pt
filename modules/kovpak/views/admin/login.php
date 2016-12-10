@@ -1,10 +1,9 @@
-<?php
-    
+<?php  
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use app\models\User;
-
 ?>
+    
     <h2>Замена логина и пароля</h2>
     <? if(Yii::$app->session->hasFlash('success')): ?>
     <div class="alert alert-success" role="alert">

@@ -2,9 +2,6 @@
 
 use yii\helpers\Html;
 
-/* @var $this yii\web\View */
-/* @var $model app\modules\kovpak\models\Contact */
-
 $this->title = 'Редактирование контакта ';
 $this->params['breadcrumbs'][] = ['label' => 'Контакты', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
@@ -18,6 +15,6 @@ $this->params['breadcrumbs'][] = 'Изменить';
         'model' => $model,
     ]) ?>
     
-    <h4><?= Html::a("Вернуться к списку","/kovpak/contact") ?></h4>
+    <h4><?= Html::a('Вернуться к списку', '/kovpak/contact') ?></h4>
 
 </div>

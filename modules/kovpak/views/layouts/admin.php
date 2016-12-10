@@ -7,6 +7,7 @@ use yii\helpers\Url;
     
 AdminAsset::register($this);
 ?>
+
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
@@ -29,7 +30,7 @@ AdminAsset::register($this);
 <div class="container">
 <div class="xsnavbar clearfix visible-xs-block">
 
-<? NavBar::begin(['brandLabel' => 'АДМИНИСТРАТИВНАЯ ПАНЕЛЬ','brandUrl' => '/kovpak']);
+<? NavBar::begin(['brandLabel' => 'АДМИНИСТРАТИВНАЯ ПАНЕЛЬ', 'brandUrl' => '/kovpak']);
 echo Nav::widget([
     'items' => [
         ['label' => 'Обновление ассортимента', 'url' => ['/kovpak']],
@@ -50,7 +51,7 @@ NavBar::end(); ?>
 </div>
     <div class="row">
         <div class="col-sm-4 block clearfix hidden-xs">
-            <?echo Nav::widget([
+            <? echo Nav::widget([
             'id' => 'nav',
             'class' => 'nav',
             'items' => [
@@ -95,10 +96,7 @@ NavBar::end(); ?>
                     'linkOptions' => [],
                 ],
             ],
-            ]);
-
-            
-            ?> 
+            ]); ?> 
         </div>
         
         <div class="col-sm-8 block admin">

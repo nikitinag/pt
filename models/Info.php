@@ -4,28 +4,13 @@ namespace app\models;
 
 use Yii;
 
-/**
- * This is the model class for table "info".
- *
- * @property integer $id
- * @property string $text_above
- * @property string $text
- * @property string $keywords
- * @property string $description
- */
 class Info extends \yii\db\ActiveRecord
 {
-    /**
-     * @inheritdoc
-     */
     public static function tableName()
     {
         return 'info';
     }
 
-    /**
-     * @inheritdoc
-     */
     public function rules()
     {
         return [
@@ -34,9 +19,6 @@ class Info extends \yii\db\ActiveRecord
         ];
     }
 
-    /**
-     * @inheritdoc
-     */
     public function attributeLabels()
     {
         return [

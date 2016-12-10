@@ -25,10 +25,10 @@ use yii\bootstrap\ActiveForm;
         <?= $form->field($model, 'coefficient')->textInput(['autofocus' => true]) ?>    
         <?= Html::submitButton('Обновить', ['class' => 'btn btn-primary']) ?>
     <?php ActiveForm::end(); ?>
-    <?php if($backup=='1'):?>
+    <?php if($backup == '1'):?>
     <div class="backup">
-        <a href="<?=Url::to('/kovpak?backup=down')?>"><button type="button" class="btn btn-default">Откатить назад</button></a>
-        <a href="<?=Url::to('/kovpak?backup=up')?>"><button type="button" class="btn btn-default">Утвердить изменения</button></a>
+        <a href="<?= Url::to('/kovpak?backup=down') ?>"><button type="button" class="btn btn-default">Откатить назад</button></a>
+        <a href="<?= Url::to('/kovpak?backup=up') ?>"><button type="button" class="btn btn-default">Утвердить изменения</button></a>
     </div>
     <? endif; ?> 
 </div>

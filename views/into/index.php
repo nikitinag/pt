@@ -11,5 +11,4 @@ use app\models\User;
         <?= $form->field($model, 'password')->passwordInput() ?>
         <?= $form->field($model, 'rememberMe')->checkbox() ?>
         <?= Html::submitButton('Войти', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
-    <?php ActiveForm::end(); ?>  
-
+    <?php ActiveForm::end(); ?>

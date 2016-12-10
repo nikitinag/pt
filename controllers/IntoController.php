@@ -9,11 +9,11 @@ use Yii;
 
 class IntoController extends \yii\web\Controller
 {
-    public $layout='into';
+    public $layout = 'into';
         
     public function beforeAction()
     {
-        $this->view->title='ТООИН | Вход в админку';
+        $this->view->title = 'ТООИН | Вход в админку';
         return true;
     }
     
@@ -34,11 +34,6 @@ class IntoController extends \yii\web\Controller
         ]);
     }
 
-    /**
-     * Logout action.
-     *
-     * @return string
-     */
     public function actionLogout()
     {
         Yii::$app->user->logout();

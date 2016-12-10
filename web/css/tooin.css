@@ -1,64 +1,66 @@
-body{
+body {
     font-family: arial!important;
     font-size: 14px;
     min-width:320px;
     background-color: #fff;
     background: url(/web/images/fon.jpg);
 }
-p{
+p {
     margin: 0;
 }
-h3{
+h3 {
     font-size: 20px;
     text-align: center;
     font-weight: bold;
 }
-h4{
+h4 {
     font-size: 18px;
     font-weight: bold;
 }
-.line{
+.line {
     background: url(/web/images/fon.jpg);
 }
-.line > p{
+.line > p {
     color:#000033;
     text-align: center;
     margin:0;
     padding: 3px 0; 
 }
-.navbar-inverse{
+.navbar-inverse {
     background-color: #000033;
     border-radius: 0;
     margin: 0;
 }
-.navbar-brand > img{
+.navbar-brand > img {
     max-height: 30px;
 }
-.navbar-brand{
+.navbar-brand {
     padding-top: 10px;
 }
 .navbar-inverse .navbar-toggle {
     background-color: #000033;
     border: 2px solid #fff;
 }
-.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover{
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
     background-color: #cccccc; 
 }
-.navbar-inverse .navbar-nav > li > a{
+.navbar-inverse .navbar-nav > li > a {
     font-weight: bold;
 }
 .navbar-inverse .navbar-nav > li > a:hover {
     background-color: #fff;
     color: #000033;
 }
-.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:focus, .navbar-inverse .navbar-nav > .open > a:hover {
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a:focus,
+.navbar-inverse .navbar-nav > .open > a:hover {
     background-color: #fff;
     color: #000033;
 }
-.section-calculator{
+.section-calculator {
     padding-top: 3px;
 }
-.link-calculator{
+.link-calculator {
     display: none;
     background-color: #000033;
     padding: 10px 0;
@@ -79,17 +81,17 @@ h4{
 }
 /*calculator*/
 
-.calculator{
+.calculator {
     color: #000033;
     font-size: 11px;
 }
-#calculator{
+#calculator {
     padding-top: 10px;
 }
-.list{
+.list {
     padding: 0 15px;
 }
-.list > li{
+.list > li {
     list-style: outside none none;
     text-align: center;
     border-bottom: 1px solid #000033;
@@ -102,195 +104,193 @@ h4{
     -ms-user-select: none;
     user-select: none;
 }
-.list > li:hover{
+.list > li:hover {
     font-weight: bold;
 }
-.activeelement{
+.activeelement {
     color: #3366ff;
     font-weight: bold;
 }
-.calculator-form{
+.calculator-form {
     margin: 20px 13px;    
 }
-.form-control, .input-group-addon, .btn{
+.form-control, .input-group-addon, .btn {
     font-size: 11px;
     border-radius: 0;
     border: 1px solid #000033;
 }
-.form-control:focus{
+.form-control:focus {
     border-color: #3366ff;
 }
-.input-group{
+.input-group {
     margin: 5px 0;
 }
-.input-group-addon{
+.input-group-addon {
     color: #000033;
 }
-.calculator-form > button{
+.calculator-form > button {
     margin-top: 10px;
     border-color: #000033!important;
     color: #000033!important;
 }
-.calculator-form > button:hover{
+.calculator-form > button:hover {
     background-color: #6699ff!important;
 }
-.calculator-result{
+.calculator-result {
     text-align: center;
     padding-bottom: 10px;
     font-size: 16px;
     font-weight: bold;
 }
-.calculator-good{
+.calculator-good {
     color: #3366ff;
 }
-.calculator-bad{
+.calculator-bad {
     color: red;
 }
-.calculator-form-IE p{
+.calculator-form-IE p {
     text-align: center;  
 }
 
 /*---------currency----------*/
-.currency{
+
+.currency {
     margin-top: 25px;
     margin-bottom: 35px;
     color: #000033;
 }
-.currency p{
+.currency p {
     text-align: center;
     font-size: 16px;
     font-weight: bold;
 }
-.currency_date{
+.currency_date {
     font-style: italic;
     font-size: 13px;
+    font-weight: 100!important;
     text-align: center;
     margin-bottom: 10px;
 }
-.xs span{
+.xs span {
     margin-left: 10px;
     margin-right: 10px;
 }
 
 /*---------main----------*/
 
-.main-content{
+.main-content {
     padding-top: 10px;
 }
-.main-content p{
+.main-content p {
    padding-bottom: 10px; 
 }
-.main-content h4{
+.main-content h4 {
    margin: 10px 0; 
 }
-.main-content img{
+.main-content img {
    margin-bottom: 15px; 
 }
-.contact ul{
+.contact ul {
     margin-left: 35px;
     padding-bottom: 20px;
 }
-.gly{
+.gly {
     font-size: 14px;
 }
-.type{
+.type {
     margin-left: 5px;
     font-size: 18px;
     font-family: arial;
     font-weight: bold;
 }
-.map{
+.map {
     margin:15px 0;
     border: 5px inset #000;
 }
 
 /*---employees---*/
 
-.employees span{
+.employees span {
     margin-left: 10px;
     font-weight: bold;
 }
 
 /*---footer---*/
 
-footer{
+footer {
     margin-top: 15px;
     padding-bottom: 20px;
     background-color: #000033;
     font-size: 11px;
     color: #cccccc;
 }
-footer p{
+footer p {
     margin: 15px 0;
     font-weight: bold;
 }
-.contacts, .copy{
+.contacts, .copy {
     padding-left: 130px;
 }
-.contacts > dl{
+.contacts > dl {
     margin: 5px 0;
 }
-.develop{
+.develop {
     margin-top: 15px;
     margin-bottom: 40px;
 }
 
 /*-----@media------*/
 
-@media only screen and (min-width:1200px){
+@media only screen and (min-width:1200px) {
     
-    body{
+    body {
         font-size: 16px;
     }
-    .calculator-sm, .form-control, footer{
+    .calculator-sm, .form-control, footer {
         font-size: 14px;
     }
 }
 
 
-@media only screen and (max-width:768px){
-    .line{
+@media only screen and (max-width:767px) {
+    .line {
         background-image: none;
         background-color: #cccccc;
     }
-    body{
+    body {
         background-image: none;
     }
-    .link-calculator{
+    .link-calculator {
         display: block;
     }
-    .section-calculator{
+    .section-calculator {
         border-bottom: 2px solid #fff;
     }
-    .calculator-info{
+    .calculator-info {
         border-bottom: 1px solid #000033;
     }
     .main {
     margin-top: 125px; 
     }
-    .main > div{
+    .main > div {
         margin: 0;
     }
-    .section-calculator{
+    .section-calculator {
     background-color: #fff;
     }
-    .copy{
+    .copy {
     border-top: 1px solid #cccccc;
-}
+    }
 }
 
-@media only screen and (max-width:500px){
+@media only screen and (max-width:500px) {
     .line{
         font-size:10px;
     }
 }
 
-@media only screen and (max-width:350px){
+@media only screen and (max-width:350px) {
     .line{
         font-size:9px;
     }
 }
-
-
-
-

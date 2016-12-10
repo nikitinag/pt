@@ -6,15 +6,23 @@
         <p>
         <?php 
             switch($p){
-                case 'телефон-факс':echo '<span class="glyphicon glyphicon-phone-alt gly"></span>';break;
-                case 'мобильный телефон':echo '<span class="glyphicon glyphicon-phone gly"></span>';break;
-                case 'эл.почта':echo '<span class="glyphicon glyphicon-envelope gly"></span>';break;
-                case 'адрес':echo '<span class="glyphicon glyphicon-map-marker gly"></span>';break;
+                case 'телефон-факс':
+                    echo '<span class="glyphicon glyphicon-phone-alt gly"></span>';
+                    break;
+                case 'мобильный телефон':
+                    echo '<span class="glyphicon glyphicon-phone gly"></span>';
+                    break;
+                case 'эл.почта':
+                    echo '<span class="glyphicon glyphicon-envelope gly"></span>';
+                    break;
+                case 'адрес':
+                    echo '<span class="glyphicon glyphicon-map-marker gly"></span>';
+                    break;
             }
-            echo '<span class="type">'.$p.':</span>';
+            echo '<span class="type">' . $p . ':</span>';
          ?>
          </p>
-        <ul><?=$li?></ul>
+        <ul><?= $li ?></ul>
     <? endforeach ?>
     <!--Карта-->
     <section class="map">

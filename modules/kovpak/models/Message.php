@@ -4,28 +4,13 @@ namespace app\modules\kovpak\models;
 
 use Yii;
 
-/**
- * This is the model class for table "message".
- *
- * @property integer $id
- * @property string $name
- * @property string $email
- * @property string $text
- * @property string $date
- */
 class Message extends \yii\db\ActiveRecord
 {
-    /**
-     * @inheritdoc
-     */
     public static function tableName()
     {
         return 'message';
     }
 
-    /**
-     * @inheritdoc
-     */
     public function rules()
     {
         return [
@@ -36,9 +21,6 @@ class Message extends \yii\db\ActiveRecord
         ];
     }
 
-    /**
-     * @inheritdoc
-     */
     public function attributeLabels()
     {
         return [

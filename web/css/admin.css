@@ -1,67 +1,67 @@
-body{
+body {
     background-color: #000033;
 }
-.container{
+.container {
     
     //padding: 0;
     
 }
-.header, .row{
+.header, .row {
     background-color: #fff;
     margin: 10px 0 10px 0;
     padding-bottom: 20px;
     border: 2px dotted #000033;
 }
-.header{
+.header {
    padding: 10px 0; 
 }
-.header h1{
+.header h1 {
     margin: 0!important;
     text-align: center;
     font-size: 32px;
     font-weight: bold;
     color: #000033;
 }
-h2{
+h2 {
     text-align: center;
     font-size: 22px;
     font-weight: bold;
 }
-h3{
+h3 {
     font-size: 20px;
     text-align: center;
     font-weight: bold;
 }
-h4{
+h4 {
     padding-top: 15px;
     font-size: 18px;
     font-weight: bold;
 }
-.nav{
+.nav {
     margin: 20px 0;
     font-size: 18px;
     font-weight: bold;
 }
-.update input{
+.update input {
     width: 100px;
 }
-.form-control, .input-group-addon, .btn{
+.form-control, .input-group-addon, .btn {
     border-radius: 0;
 }
-.admin > button{
+.admin > button {
     margin-top: 10px;
     border-color: #000033!important;
     color: #000033!important;
 }
-.admin > button:hover{
+.admin > button:hover {
     background-color: #6699ff!important;
 }
-.backup{
+.backup {
     margin-top: 15px;
     padding-top: 15px;
     border-top: 1px solid #000033;
 }
-.into{
+.into {
     width: 40%;
     margin-left: auto;
     margin-right: auto;

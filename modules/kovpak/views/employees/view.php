@@ -3,9 +3,6 @@
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 
-/* @var $this yii\web\View */
-/* @var $model app\modules\kovpak\models\Employees */
-
 $this->title = $model->name;
 $this->params['breadcrumbs'][] = ['label' => 'Employees', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
@@ -45,6 +42,6 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]) ?>
     
-    <h4><?= Html::a("Вернуться к списку","/kovpak/employees") ?></h4>
+    <h4><?= Html::a('Вернуться к списку', '/kovpak/employees') ?></h4>
 
 </div>

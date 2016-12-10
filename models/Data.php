@@ -4,29 +4,13 @@ namespace app\models;
 
 use Yii;
 
-/**
- * This is the model class for table "data".
- *
- * @property integer $id
- * @property integer $category_id
- * @property string $item1
- * @property string $item2
- * @property string $type
- * @property string $price
- */
 class Data extends \yii\db\ActiveRecord
 {
-    /**
-     * @inheritdoc
-     */
     public static function tableName()
     {
         return 'data';
     }
 
-    /**
-     * @inheritdoc
-     */
     public function rules()
     {
         return [
@@ -37,9 +21,6 @@ class Data extends \yii\db\ActiveRecord
         ];
     }
 
-    /**
-     * @inheritdoc
-     */
     public function attributeLabels()
     {
         return [

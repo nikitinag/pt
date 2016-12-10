@@ -4,9 +4,6 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use mihaildev\ckeditor\CKEditor;
 
-/* @var $this yii\web\View */
-/* @var $model app\modules\kovpak\models\Employees */
-/* @var $form yii\widgets\ActiveForm */
 ?>
 
 <div class="employees-form">

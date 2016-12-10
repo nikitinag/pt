@@ -7,12 +7,6 @@ use yii\base\Model;
 use app\models\User;
 use yii\base\Security;
 
-/**
- * LoginForm is the model behind the login form.
- *
- * @property User|null $user This property is read-only.
- *
- */
 class AdminForm extends Model
 {
     public $username;
@@ -24,10 +18,6 @@ class AdminForm extends Model
 
     private $_user = false;
 
-
-    /**
-     * @return array the validation rules.
-     */
     public function rules()
     {
         return [
@@ -76,18 +66,14 @@ class AdminForm extends Model
         }
     }
 
-    /**
-     * Logs in a user using the provided username and password.
-     * @return bool whether the user is logged in successfully
-     */
     public function update()
     {
         if ($this->validate()) {
-            $user=$this->getUser();
-            if(!empty($this->newusername)) $this->username=$this->newusername;
-            if(!empty($this->newpassword1)) $this->password=$this->newpassword1;
-            $this->password=$this->generatePassword($this->password);       
-            if($user->UpdateUser($this->username,$this->password)){
+            $user = $this->getUser();
+            if(!empty($this->newusername)) $this->username = $this->newusername;
+            if(!empty($this->newpassword1)) $this->password = $this->newpassword1;
+            $this->password = $this->generatePassword($this->password);       
+            if($user->UpdateUser($this->username, $this->password)){
                 return Yii::$app->user->login($this->getUser());
             }
         }
@@ -99,11 +85,6 @@ class AdminForm extends Model
         return Yii::$app->security->generatePasswordHash($password);
     }
 
-    /**
-     * Finds user by [[username]]
-     *
-     * @return User|null
-     */
     public function getUser()
     {
         if ($this->_user === false) {
