@@ -4,7 +4,7 @@ $(document).ready(function(){
 $.ajax({
   type: 'GET',
   url: 'http://www.nbrb.by/API/ExRates/Rates',
-  data: 'Periodicity = 0',
+  data: 'Periodicity=0',
   dataType: 'json',
   success: function(data){
     var resultLg = '';
