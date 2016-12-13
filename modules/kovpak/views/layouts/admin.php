@@ -30,7 +30,7 @@ AdminAsset::register($this);
 <div class="container">
 <div class="xsnavbar clearfix visible-xs-block">
 
-<? NavBar::begin(['brandLabel' => 'АДМИНИСТРАТИВНАЯ ПАНЕЛЬ', 'brandUrl' => '/kovpak']);
+<?php NavBar::begin(['brandLabel' => 'АДМИНИСТРАТИВНАЯ ПАНЕЛЬ', 'brandUrl' => '/kovpak']);
 echo Nav::widget([
     'items' => [
         ['label' => 'Обновление ассортимента', 'url' => ['/kovpak']],

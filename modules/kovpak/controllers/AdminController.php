@@ -27,9 +27,9 @@ class AdminController extends AppAdminController
                 }
                 if(UpDownDeleteData('delete')){
                     foreach($listUrls as $listUrl){
-                        $result = parseHTML($model->coefficient, $listUrl->url_remote, $listUrl->id);
                         $system->backup = '1';
                         $system->save();
+                        $result = parseHTML($model->coefficient, $listUrl->url_remote, $listUrl->id);
                     }
                 }
                 if($result){

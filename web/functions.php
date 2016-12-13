@@ -36,7 +36,7 @@ use yii\db\ActiveRecord;
     }
         
     //Восстановление основной базы(down) или обновление резервной(up) и обнуление Category и Data
-    function UpDownDeleteData($type)
+    function UpDownDeleteData($type = 'down')
     {
         $connection = Yii::$app->getDb();
         if(empty($connection)){return false; }
