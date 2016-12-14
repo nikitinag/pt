@@ -10,6 +10,7 @@ use app\models\Contact;
 use app\models\Employees;
 use app\models\FeedbackForm;
 use app\models\Message;
+use app\models\Pages;
 use app\models\ListUrl;
 use app\models\Category;
 
@@ -111,6 +112,21 @@ class MainController extends AppController
             
         }
         return $this->render('data', compact('categories', 'name', 'date')); 
+    }
+    
+    public function actionPages()
+    {
+        
+        if(Yii::$app->request->get()){
+            $data = Yii::$app->request->get();
+            $data = (int)$data['id'];
+            $page = Pages::find()->where(['id' => $data, 'watch' => '1'])->limit(1)->asArray()->one();
+            $this->view->title .= $page['name'];
+            $name = $page['name'];
+            $text = $page['text'];
+            
+        }
+        return $this->render('page', compact('name', 'text')); 
     }
 
 }

@@ -25,7 +25,7 @@ use app\models\Data;
                 <table class="table table-striped table-condensed">
                     <tr>
                         <th><?= $category->item1 ?></th>
-                    `   <th><?= $category->item2 ?></th>
+                        <th><?= $category->item2 ?></th>
                         <th><?= $category->type ?></th>
                         <th><?= $category->price ?></th>
                     </tr>

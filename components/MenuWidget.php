@@ -7,6 +7,7 @@ use yii\base\Widget;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use app\models\Info;
+use app\models\Pages;
 use app\models\ListUrl;
 use yii\bootstrap\NavBar;
 use yii\bootstrap\Nav;
@@ -19,6 +20,16 @@ class MenuWidget extends Widget
         echo('<section class="line"><p>' . $above['text_above'] . '</p></section>');
         
         $items = array();
+        $pages = Pages::find()->asArray()->where(['watch' => '1'])->all();
+        if($pages){
+            foreach($pages as $page){
+                $items[] = [
+                    'label' => $page['name'],
+                    'url' => '/pages?id='. $page['id'],
+                ];
+            }
+        }
+        
         $listUrl = ListUrl::find()->asArray()->all();
         if($listUrl){
             foreach($listUrl as $url){

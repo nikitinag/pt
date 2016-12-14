@@ -14,6 +14,7 @@ class MenuWidgetXS extends Widget
             'items' => [
                 ['label' => 'Обновление ассортимента', 'url' => ['/kovpak']],
                 ['label' => 'Текст на главной странице', 'url' => ['/kovpak/text']],
+                ['label' => 'Другие страницы', 'url' => ['/kovpak/pages']],
                 ['label' => 'Вакансии', 'url' => ['/kovpak/employees']],
                 ['label' => 'Сообщения', 'url' => ['/kovpak/message']],
                 ['label' => 'Контакты', 'url' => ['/kovpak/contact']],

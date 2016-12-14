@@ -52,6 +52,11 @@ AdminAsset::register($this);
                     'linkOptions' => [],
                 ],
                 [
+                    'label' => 'Другие страницы',
+                    'url' => ['/kovpak/admin/pages'],
+                    'linkOptions' => [],
+                ],
+                [
                     'label' => 'Вакансии',
                     'url' => ['/kovpak/admin/employees'],
                     'linkOptions' => [],

@@ -56,10 +56,10 @@ $config = [
             'rules' => [
                 '/' => 'main/index',
                 '<action:logout>' => 'into/<action>',
-                '/kovpak/<action:(employees|contact|message)>' => 'kovpak/<action>',
+                '/kovpak/<action:(employees|contact|message|pages)>' => 'kovpak/<action>',
                 '/kovpak/<action:[\w-]+>' => 'kovpak/admin/<action>',
                 '/kovpak' => 'kovpak/admin/index',
-                '<action:(contact|employees|feedback|category)>' => 'main/<action>',
+                '<action:(contact|employees|feedback|category|pages)>' => 'main/<action>',
             ],
         ],
 
