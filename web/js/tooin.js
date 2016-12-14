@@ -7,20 +7,18 @@ $.ajax({
   data: 'Periodicity=0',
   dataType: 'json',
   success: function(data){
-    var resultLg = '';
-    var resultXs = '';
+    var result = '';
     reg = /145|292|298/;
     data.forEach(function(curr){
         if(reg.test(curr.Cur_ID)){
-            result = curr.Cur_Abbreviation + ' ' + curr.Cur_Scale + ' <span class="glyphicon glyphicon-arrow-right"></span> ' + curr.Cur_OfficialRate;
-            resultLg += '<p>' + result + '</p>';
-            resultXs += '<span>' + result + '</span>';
+            string = curr.Cur_Abbreviation + ' ' + curr.Cur_Scale + ' <span class="glyphicon glyphicon-arrow-right"></span> ' + curr.Cur_OfficialRate;
+            result += '<p>' + string + '</p>';
         }
     });
     date = data[0].Date.substr(0,10);
     $('.currency_date').html('НБ на дату ' + date);
-    $('.lg').html(resultLg);
-    $('.xs').html(resultXs);
+    $('.lg').html(result);
+    $('.xs').html(result);
   },
   error: function(){
     $('.currency_date').append('Сервис недоступен');

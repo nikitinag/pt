@@ -1,5 +1,6 @@
 <?php
 use app\assets\AdminAsset;
+use app\components\MenuWidgetXS;
 use yii\bootstrap\Navbar;
 use yii\bootstrap\Nav;
 use yii\helpers\Html;
@@ -29,29 +30,14 @@ AdminAsset::register($this);
 
 <div class="container">
 <div class="xsnavbar clearfix visible-xs-block">
-
-<?php NavBar::begin(['brandLabel' => 'АДМИНИСТРАТИВНАЯ ПАНЕЛЬ', 'brandUrl' => '/kovpak']);
-echo Nav::widget([
-    'items' => [
-        ['label' => 'Обновление ассортимента', 'url' => ['/kovpak']],
-        ['label' => 'Текст на главной странице', 'url' => ['/kovpak/text']],
-        ['label' => 'Вакансии', 'url' => ['/kovpak/employees']],
-        ['label' => 'Сообщения', 'url' => ['/kovpak/message']],
-        ['label' => 'Контакты', 'url' => ['/kovpak/contact']],
-        ['label' => 'Логин и пароль', 'url' => ['/kovpak/admin/login']],
-        ['label' => 'Перейти на сайт', 'url' => ['/']],
-        ['label' => 'Выход', 'url' => ['/logout']],
-    ],
-    'options' => ['class' => 'navbar-nav'],
-]);
-NavBar::end(); ?>
+    <?= app\components\MenuWidgetXS::widget() ?>
 </div>
 <div class="header clearfix hidden-xs">
     <h1>АДМИНИСТРАТИВНАЯ ПАНЕЛЬ</h1>
 </div>
     <div class="row">
         <div class="col-sm-4 block clearfix hidden-xs">
-            <? echo Nav::widget([
+            <?php echo Nav::widget([
             'id' => 'nav',
             'class' => 'nav',
             'items' => [
@@ -106,10 +92,6 @@ NavBar::end(); ?>
     </div><!--/.row-->
 </div><!--/.container-->
 
-
-<footer>
-    
-</footer>
 <?php $this->endBody() ?>
 </body>
 </html>

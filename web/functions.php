@@ -81,7 +81,7 @@ use yii\db\ActiveRecord;
                         $i++;
                         if($i == 1){
                             $ths = pq($tr)->find('th');                       
-                            $category->name = pq($ths)->text();;                        
+                            $category->name = pq($ths)->text();                      
                         }
                         if($i == 2){
                             $ths = pq($tr)->find('th');

@@ -50,7 +50,7 @@ AppAsset::register($this);
             </section>
             <section class="currency visible-xs-block">
                 <h4>Курсы валют: <i class="currency_date"></i></h4>
-                <p class="xs"></p>
+                <div class="xs"></p>
             </section>
             
         </div>
