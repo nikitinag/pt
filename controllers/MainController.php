@@ -68,20 +68,20 @@ class MainController extends AppController
                 $message->date = date("Y-m-d H:i:s");
                 $throwdb = $message->save(false);
                 //на почту администратору
-                /*$throwadmin = Yii::$app->mailer->compose()
-                    ->setFrom([$feedback->email => $name])
+                $throwadmin = Yii::$app->mailer->compose()
+                    ->setFrom(['tooin@tooin.by' => 'УП ТООИН'])
                     ->setTo($email)
-                    ->setSubject('Theme message')
+                    ->setSubject('Вам письмо от ' . $name . ' с почтой ' . $feedback->email)
                     ->setTextBody($textmessage)
                     ->send();
                 //на почту клиенту  
                 $throwuser = Yii::$app->mailer->compose()
-                    ->setFrom([$email => 'TOOIN'])
+                    ->setFrom(['tooin@tooin.by' => 'УП ТООИН'])
                     ->setTo($feedback->email)
-                    ->setSubject('Вы отправили сообщение в компанию ТООИН с текстом')
+                    ->setSubject('Вы отправили сообщение в компанию ТООИН')
                     ->setHtmlBody($textmessage)
-                    ->send();*/
-                if($throwdb){
+                    ->send();
+                if($throwdb && $throwuser){
                     Yii::$app->session->setFlash('success', 'Сообщение отправлено');
                     return $this->refresh();
                 }else{
