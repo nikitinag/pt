@@ -156,7 +156,6 @@ h4 {
 
 .currency {
     margin-top: 25px;
-    margin-bottom: 35px;
     color: #000033;
 }
 .currency p {
@@ -265,16 +264,19 @@ footer p {
         border-bottom: 1px solid #000033;
     }
     .main {
-    margin-top: 125px; 
+        margin-top: 125px; 
     }
     .main > div {
         margin: 0;
     }
     .section-calculator {
-    background-color: #fff;
+        background-color: #fff;
     }
     .copy {
-    border-top: 1px solid #cccccc;
+        border-top: 1px solid #cccccc;
+    }
+    .contacts, .copy {
+        padding-left: 50px;
     }
 }
 
