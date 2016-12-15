@@ -81,8 +81,8 @@ class MainController extends AppController
                     ->setSubject('Вы отправили сообщение в компанию ТООИН')
                     ->setHtmlBody($textmessage)
                     ->send();
-                if($throwdb && $throwuser){
-                    Yii::$app->session->setFlash('success', 'Сообщение отправлено');
+                if($throwdb && $throwadmin && $throwuser){
+                    Yii::$app->session->setFlash('success', 'Сообщение отправлено. Копия письма придёт вам на почту ' . $feedback->email);
                     return $this->refresh();
                 }else{
                     Yii::$app->session->setFlash('error', 'Произошла ошибка обработки данных');
